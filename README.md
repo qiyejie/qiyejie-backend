@@ -32,7 +32,7 @@ https://github.com/qiyejie/backend
 
 数据库adminer：https://backend.tanyang.asia/adminer.php（backend:qiyejie）
 
-### user_table
+### user
 
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
 | -------------- | -------- | ---- | ---- | ---- | ---------------- |
