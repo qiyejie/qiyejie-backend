@@ -36,7 +36,7 @@ https://github.com/qiyejie/backend
 
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
 | -------------- | -------- | ---- | ---- | ---- | ---------------- |
-| qcy_id         | varchar  | 16   | 是   | 否   | 用户ID           |
+| qyj_id         | varchar  | 16   | 是   | 否   | 用户ID           |
 | email          | varchar  | 16   | 否   | 否   | 用户邮箱         |
 | password       | varchar  | 16   | 否   | 否   | 用户密码         |
 | nickname       | varchar  | 16   | 否   | 否   | 用户昵称         |
