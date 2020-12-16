@@ -10,6 +10,12 @@
 
 Linux + Nginx + MySql + PHP
 
+**版本信息**
+
+PHP：7.3
+
+ThinkPHP 6
+
 **图床：**
 
 七牛云存储
