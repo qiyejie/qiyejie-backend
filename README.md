@@ -10,6 +10,12 @@
 
 Linux + Nginx + MySql + PHP
 
+**版本信息**
+
+PHP：7.3
+
+ThinkPHP 6
+
 **图床：**
 
 七牛云存储
@@ -30,7 +36,11 @@ https://github.com/qiyejie/backend
 
 ## 数据库信息
 
-数据库adminer：https://backend.tanyang.asia/adminer.php（backend:qiyejie）
+**数据库管理**(adminer)：https://backend.tanyang.asia/adminer.php
+
+**username**:backend
+
+**password:**qiyejie
 
 ### user
 
