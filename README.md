@@ -28,6 +28,8 @@ https://github.com/qiyejie/backend
 
 根域名：        tanyang.asia
 
+测试：            http://develop.tanyang.asia
+
 后端：            backend.tanyang.asia
 
 官网：            www.tanyang.asia
