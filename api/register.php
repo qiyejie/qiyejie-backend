@@ -10,10 +10,12 @@ if ($qyjBackendSql) {
 } else {
     echo "Mysql Connect Successfully";
 }
+
 $sqlUserInsert = "INSERT INTO user " .
     "(nicknme,password) " .
     "VALUES " .
     "('$nickname','$password')";
+    
 $sqlReturnValue = mysqli_query($qyjBackendSql, $sqlUserInsert);
 if (!sqlReturnValue) {
     die('Insert Error: ' . mysqli_error($qyjBackendSql));
