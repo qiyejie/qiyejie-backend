@@ -14,8 +14,8 @@ $sqlUserInsert = "INSERT INTO user " .
     "(nicknme,password) " .
     "VALUES " .
     "('$nickname','$password')";
-$retval = mysqli_query($qyjBackendSql, $sqlUserInsert);
-if (!$retval) {
+$sqlReturnValue = mysqli_query($qyjBackendSql, $sqlUserInsert);
+if (!sqlReturnValue) {
     die('Insert Error: ' . mysqli_error($qyjBackendSql));
 }
 echo "Insert Successfully\n";
