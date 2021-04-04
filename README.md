@@ -95,8 +95,9 @@ https://github.com/qiyejie/backend
 ### attendance表
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
 | ----------- | ---- | ---- | ---- | ---- | ---- |
-|data|DATA|32|否|否|日期|
+|signed_date|DATA|32|否|否|日期|
 |signed_id|varchar||否|否|签到人员|
+|signed_time|||||签到时间|
 
 ### worklog表
 

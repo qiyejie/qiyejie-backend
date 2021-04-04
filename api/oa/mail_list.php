@@ -40,6 +40,7 @@ foreach ($department_info as $department) {
     }
 	$return_user[$department] = $users;
 }
+mysqli_close($mysql_connect);
 echo json_encode($return_user);
 ?>
 
