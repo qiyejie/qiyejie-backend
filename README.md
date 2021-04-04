@@ -123,3 +123,15 @@ https://github.com/qiyejie/backend
 | user_id |      |      |      |      | 用户 |
 | asset |      |      |      |      | 使用资产 |
 
+### file表
+
+| 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
+| ----------- | ---- | ---- | ---- | ---- | ---- |
+| file_id |  |  | 是 |  | 文件id |
+| filename |      |      |      |      | 文件名 |
+| path |      |      |      |      | 存放路径 |
+| from_id |      |      |      |      | 上传者 |
+| upload_time |      |      |      |      | 上传时间 |
+| file_group |      |      |      |      | 分类 |
+|download_auth|||||下载权限|
+

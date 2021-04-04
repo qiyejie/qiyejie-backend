@@ -8,27 +8,18 @@ GET /api/oa/mail_list.php
 {
   "department":[
     {
-      "name":"John",
-      "is_leave":"0",
-      "is_login":"1"
+      "qyj_id":"0",
+      "name":"John"
     },
     {
-      "name":"Anna",
-      "is_leave":"0",
-      "is_login":"1"
+      "qyj_id":"0",
+      "name":"Anna"
     },
     {
-      "name":"Peter",
-      "is_leave":"1",
-      "is_login":"0"
+      "qyj_id":"0",
+      "name":"Peter"
     }
   ]
 }
 
 ```
-
-**说明 ： **
-
-is_leave状态(1:请假，0:未请假)
-
-is_login状态(1:未登录，0:登录)
