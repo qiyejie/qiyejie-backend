@@ -1,11 +1,7 @@
 # 通讯录api
 
 ## IN:
-
-| 参数    | 说明     | 格式 |
-| ------- | -------- | ---- |
-| user_id | 用户的id | json |
-
+GET /api/oa/mail_list.php
 ## OUT：
 
 ```

@@ -1,5 +1,5 @@
 <?php
-include('config.php'); //配置数据库信息
+include('../config.php'); //配置数据库信息
 $registerResult = "None"; //初始化返回状态
 $jsonContent = json_decode(file_get_contents("php://input"), true);
 $nickname = $jsonContent['username'];
