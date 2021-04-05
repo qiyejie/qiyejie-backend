@@ -9,8 +9,9 @@ POST /api/oa/need_deal/new_deal.php
 |qyj_id|用户id|
 |title|待办标题|
 |content|待办详情|
-|dead_line|截止时间|
+|deadline|截止时间|
 |classify|待办分类|
+|address|事件地点|
 
 返回0:失败，1:成功
 
