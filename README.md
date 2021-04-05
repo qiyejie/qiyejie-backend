@@ -1,6 +1,11 @@
 # backend
 
-本项目用来服务企业捷项目的后端业务（通过webhook部署到backend环境）
+本项目用来服务企业捷项目的后端业务（通过webhook.js部署到backend环境）
+
+GitHub webhook部署
+webhook.js
+deploy.sh
+pm2守护进程
 
 # 后端项目文档
 
