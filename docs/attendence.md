@@ -1,5 +1,5 @@
 # 接口信息
-地址：`/api/oa/check_attendence.php`
+POST ：`/api/oa/check_attendence.php`
 # 需要参数
 |参数|说明|
 |---|---|
