@@ -1,5 +1,12 @@
 # 接口信息
-POST ：`/api/oa/check_attendence.php`
+
+接口描述：
+
+用于用户签到操作
+
+接口用法：
+
+POST ：`/api/oa/attendance/check_attendance.php`
 # 需要参数
 |参数|说明|
 |---|---|

@@ -2,7 +2,13 @@
 
 ## 接口信息
 
-POST  /api/oa/get_user_info.php
+接口说明：
+
+用于通过qyj_id获取用户其他信息，方便前端显示
+
+接口用法：
+
+POST  `/api/oa/get_user_info.php`
 
 ## 传入
 

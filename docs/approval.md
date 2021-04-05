@@ -1,6 +1,13 @@
 # 获取请假申请接口
 ## 接口信息
-POST: /api/oa/approval.php
+
+接口描述：
+
+用于请假申请的下一步处理人获取当前需要处理哪些请假申请
+
+接口用法：
+
+POST: /api/oa/leave_work/approval.php
 ## 参数
 |参数|说明|
 |---|---|

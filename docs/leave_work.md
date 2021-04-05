@@ -2,9 +2,13 @@
 
 ## 接口信息
 
-传送方式：POST
+接口描述：
 
-接口地址/api/oa/leave_work.php
+用于提交请假申请
+
+接口地址：
+
+POST `/api/oa/leave_work/leave_work.php`
 
 ## 需要参数
 
