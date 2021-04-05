@@ -2,7 +2,7 @@
 // 添加数据库配置文件
 include('../config.php');
 // 定义返回结果 0为失败，1为成功,2为已签到
-$check_result = 0;
+$api_result = 0;
 // 接收传进来的参数
 $json_contents = json_decode(file_get_contents("php://input"), true);
 // 接收用户名
@@ -35,7 +35,7 @@ if ($wifi_ssid == $company_wifi and $wifi_ip == $company_ip) {
     $check_exist_sql = "SELECT signed_id from attendance where signed_data=$signed_date";
     $exist_check = mysqli_query($mysql_connect,$check_exist_sql);
     if (mysqli_num_rows($exist_check) > 0) {
-        $check_result = 2;
+        $api_result = 2;
     }else{
         //构造语句
         $insert_sql = "INSERT INTO attendance (signed_date,signed_id,signed_time) VALUES ('$signed_date','$user_id','$signed_time')";
@@ -47,10 +47,10 @@ if ($wifi_ssid == $company_wifi and $wifi_ip == $company_ip) {
             die("Error".mysqli_error($mysql_connect));
         } else {
             //签到成功
-            $check_result = 1;
+            $api_result = 1;
         }
     }
 }
-echo $check_result;
+echo $api_result;
 ?>
 
