@@ -6,7 +6,7 @@ GitHub webhook部署
 webhook.js
 deploy.sh
 pm2守护进程
-详见→ https://segmentfault.com/a/1190000016071010
+详见: https://segmentfault.com/a/1190000016071010
 
 # 后端项目文档
 
