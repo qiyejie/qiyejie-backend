@@ -1,6 +1,6 @@
 # backend
 
-本项目用来服务企业捷项目的后端业务（通过hook部署到develop环境测试）
+本项目用来服务企业捷项目的后端业务（通过hook部署到backend环境）
 
 # 后端项目文档
 
@@ -28,7 +28,7 @@ https://github.com/qiyejie/backend
 
 测试：            http://develop.tanyang.asia
 
-后端：            backend.tanyang.asia
+后端：            https://backend.tanyang.asia
 
 官网：            www.tanyang.asia
 
