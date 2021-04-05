@@ -28,7 +28,7 @@ https://github.com/qiyejie/backend
 
 测试：            http://develop.tanyang.asia
 
-后端：            http://backend.tanyang.asia
+后端：            https://backend.tanyang.asia
 
 官网：            www.tanyang.asia
 
