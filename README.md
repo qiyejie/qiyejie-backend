@@ -117,13 +117,6 @@ https://github.com/qiyejie/backend
 | leave_data |      |      |      |      | 请假离开日期 |
 | back_data |      |      |      |      | 请假结束日期 |
 
-### assets表
-
-| 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
-| ----------- | ---- | ---- | ---- | ---- | ---- |
-| user_id |      |      |      |      | 用户 |
-| asset |      |      |      |      | 使用资产 |
-
 ### file表
 
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
@@ -138,8 +131,6 @@ https://github.com/qiyejie/backend
 
 ### need_deal表
 
- 
-
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
 | ----------- | ---- | ---- | ---- | ---- | ---- |
 | qyj_id |      |      |      |      | 用于标识属于哪一个用户 |
@@ -149,3 +140,10 @@ https://github.com/qiyejie/backend
 | dead_line | DATA |      |      |      | 截止日期 |
 | classify |      |      |      |      | 待办的分类 |
 
+### notice表
+
+| 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
+| ----------- | ---- | ---- | ---- | ---- | ---- |
+| title |      |      |      |      | 公告标题 |
+| content | | | | | 公告内容 |
+| send_time | DATA |      |      |  | 发送时间                       |
