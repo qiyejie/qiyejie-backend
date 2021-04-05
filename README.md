@@ -30,7 +30,7 @@ https://github.com/qiyejie/backend
 
 后端：            https://backend.tanyang.asia
 
-官网：            www.tanyang.asia
+官网：            https://www.tanyang.asia
 
 文件云存储：file.tanyang.asia
 
