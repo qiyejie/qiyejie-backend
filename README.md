@@ -136,7 +136,7 @@ https://github.com/qiyejie/backend
 | file_group |      |      |      |      | 分类 |
 |download_auth|||||下载权限|
 
-### agency表
+### need_deal表
 
  
 
@@ -145,7 +145,7 @@ https://github.com/qiyejie/backend
 | qyj_id |      |      |      |      | 用于标识属于哪一个用户 |
 | title | | | | | 待办的标题 |
 | content |      |      |      |      | 待办的内容 |
-| is_done |      |      |      |      | 是否已完成 |
+| is_done |      |      |      |      | 是否已完成(0：未完成，1：完成) |
 | dead_line | DATA |      |      |      | 截止日期 |
 | classify |      |      |      |      | 待办的分类 |
 
