@@ -17,6 +17,7 @@ PHP：7.3
 **图床：**
 
 七牛云存储
+icon:  http://icon.tanyang.asia
 
 **GitHub:**
 
