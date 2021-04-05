@@ -13,7 +13,7 @@ $is_apply = 0;
 //连接数据库
 $mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 //测试连接状态
-if (!mysql_connect) {
+if (!$mysql_connect) {
     die('mysql_connect error:'.mysqli_error($mysql_connect));
 }
 //构造插入语句

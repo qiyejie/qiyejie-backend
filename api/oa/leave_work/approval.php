@@ -10,7 +10,7 @@ $approve_sql = "SELECT * FROM leave_work where send_to = $qyj_id AND is_apply = 
 //连接数据集
 $mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 //测试mysql是否可连接
-if (!mysql_connect) {
+if (!$mysql_connect) {
     die('mysql_connect error:'.mysqli_error($mysql_connect));
 }
 //进入数据库查询
