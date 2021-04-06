@@ -19,7 +19,7 @@ $deal_sql_result = mysqli_query($mysql_connect,$deal_sql);
 $deal_list = array();
 while($row = mysqli_fetch_assoc($deal_sql_result))
 {
-    $info_list = array("title"=>$row['title'],"content"=>$row['content'],"is_done"=>$row['is_done'],"dead_line"=>$row['dead_line'],"classify"=>$row['classify']);
+    $info_list = array("title"=>$row['title'],"content"=>$row['content'],"is_done"=>$row['is_done'],"deadline"=>$row['deadline'],"classify"=>$row['classify'],'address'=>$row['address']);
     array_push($deal_list,$info_list);
 }
 echo json_encode($deal_list);

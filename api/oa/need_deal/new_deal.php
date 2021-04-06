@@ -9,12 +9,13 @@ $user_contents = json_decode(file_get_contents("php://input"),true);
 $user_id = $user_contents['qyj_id'];
 $title = $user_contents['title'];
 $content = $user_contents['content'];
-$dead_line = $user_contents['dead_line'];
+$deadline = $user_contents['deadline'];
 $classify = $user_contents['classify'];
+$address = $user_contents['address'];
 $is_done = 0;
 //构造查询语句
 $deal_sql = "SELECT * FROM need_deal where qyj_id=$user_id AND title=\"$title\"";
-$insert_sql = "INSERT INTO need_deal (qyj_id,title,content,dead_line,classify,is_done) VALUES ('$user_id','$title','$content','$dead_line','$classify','$is_done') ";
+$insert_sql = "INSERT INTO need_deal (qyj_id,title,content,deadline,classify,is_done,address) VALUES ('$user_id','$title','$content','$deadline','$classify','$is_done','$address') ";
 //连接数据库
 $mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 //测试mysql是否可连接

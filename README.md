@@ -141,9 +141,9 @@ https://github.com/qiyejie/backend
 | title | | | | | 待办的标题 |
 | content |      |      |      |      | 待办的内容 |
 | is_done |      |      |      |      | 是否已完成(0：未完成，1：完成) |
-| dead_line | DATA |      |      |      | 截止日期 |
+| deadline | DATA |      |      |      | 截止日期 |
 | classify |      |      |      |      | 待办的分类 |
-
+|address|     | |||事件的地址|
 ### notice表
 
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
