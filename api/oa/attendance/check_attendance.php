@@ -32,7 +32,7 @@ if ($wifi_ssid == $company_wifi and $wifi_ip == $company_ip) {
     $signed_date = date("Y-m-d");
     $signed_time = date("H:i");
     //检查是否已经签到
-    $check_exist_sql = "SELECT signed_id from attendance where signed_data=$signed_date";
+    $check_exist_sql = "SELECT signed_id from attendance where signed_date=$signed_date";
     $exist_check = mysqli_query($mysql_connect,$check_exist_sql);
     if (mysqli_num_rows($exist_check) > 0) {
         $api_result = 2;
