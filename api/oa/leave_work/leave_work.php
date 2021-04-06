@@ -1,6 +1,8 @@
 <?php
 // 加载配置文件
 include("../config.php");
+//初始化返回参数(0:失败 ，1:成功)
+$apply_result = 0;
 //接收传递参数
 $leave_contents = json_decode(file_get_contents("php://input"), true);
 //处理传递参数
@@ -22,9 +24,11 @@ $sql_leave_insert = "INSERT INTO leave_work (user_id,send_to,leave_date,back_dat
 $insert_result = mysqli_query($mysql_connect,$sql_leave_insert);
 //判断是否插入成功
 if (!$insert_result) {
-    die('Insert Error: ' . mysqli_error($mysql_connect));
+    $apply_result = 0;
 }else{
-    echo "1";
+    $apply_result = 1;
 }
+echo $apply_result;
+mysqli_close($mysql_connect);
 ?>
 
