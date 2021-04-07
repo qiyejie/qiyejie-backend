@@ -66,7 +66,6 @@ https://github.com/qiyejie/backend
 | company_id     | varchar  | 16   | 否   | 否   | 用户的企业id       |
 | device_id      | varchar  | 64   | 否   | 否   | 用户绑定的设备id   |
 
-
 ### company表
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
 | -------------- | -------- | ---- | ---- | ---- | ---------------- |
@@ -97,7 +96,7 @@ https://github.com/qiyejie/backend
 ### attendance表
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
 | ----------- | ---- | ---- | ---- | ---- | ---- |
-|signed_date|DATA|32|否|否|日期|
+|signed_date|DATE|32|否|否|日期|
 |signed_id|varchar||否|否|签到人员|
 |signed_time|||||签到时间|
 
@@ -113,11 +112,12 @@ https://github.com/qiyejie/backend
 
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
 | ----------- | ---- | ---- | ---- | ---- | ---- |
-| user_id |      |      |      |      | 申请人 |
+| apply_id |  |  | 是 |  | 申请id |
+| qyj_id |      |      |      |      | 申请人 |
 | send_to |      |      |      |      | 下一步处理人 |
 | is_apply |      |      |      |      | 是否已经通过 (0:审核中，1:通过,2:拒绝|
-| leave_data |      |      |      |      | 请假离开日期 |
-| back_data |      |      |      |      | 请假结束日期 |
+| leave_date |      |      |      |      | 请假离开日期 |
+| back_date |      |      |      |      | 请假结束日期 |
 
 ### file表
 
@@ -139,13 +139,15 @@ https://github.com/qiyejie/backend
 | title | | | | | 待办的标题 |
 | content |      |      |      |      | 待办的内容 |
 | is_done |      |      |      |      | 是否已完成(0：未完成，1：完成) |
-| deadline | DATA |      |      |      | 截止日期 |
+| deadline | DATE |      |      |      | 截止日期 |
 | classify |      |      |      |      | 待办的分类 |
 |address|     | |||事件的地址|
 ### notice表
 
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
 | ----------- | ---- | ---- | ---- | ---- | ---- |
+| notice_id |  |  | 是 |  | 公告id(自增) |
 | title |      |      |      |      | 公告标题 |
 | content | | | | | 公告内容 |
-| send_time | DATA |      |      |  | 发送时间                       |
+| send_user | | | | | 发送人 |
+| send_time | DATE |      |      |  | 发送时间                       |
