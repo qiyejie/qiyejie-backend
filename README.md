@@ -2,11 +2,11 @@
 
 本项目用来服务企业捷项目的后端业务（通过webhook.js部署到backend环境）
 ## 自动化部署流程
-GitHub webhook部署
-webhook.js
-deploy.sh
-pm2守护进程
-详见: https://segmentfault.com/a/1190000016071010
+**GitHub webhook部署**
+**webhook.js**
+**deploy.sh**
+**pm2守护进程**
+**详见: https://segmentfault.com/a/1190000016071010**
 ## 基本信息
 
 **部署环境：**
@@ -50,23 +50,21 @@ https://github.com/qiyejie/backend
 
 ### user表
 
-| 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
-| -------------- | -------- | ---- | ---- | ---- | ---------------- |
+| 列名            | 数据类型  | 长度  | 主键 | 空   | 说明             |
+| -------------- | -------- | ---- | ---- | ---- | ----------------|
 | qyj_id         | varchar  | 16   | 是   | 否   | 用户ID           |
-| email          | varchar  | 16   | 否   | 否   | 用户邮箱         |
-| password       | varchar  | 16   | 否   | 否   | 用户密码         |
-| name           | varchar  | 16   | 否   | 否   | 用户姓名         |
-| gender         | number   | 2    | 否   | 否   | 用户性别         |
-| nationality    | varchar  | 64   | 否   | 否   | 用户国籍         |
-| id_type        | number   | 16   | 否   | 否   | 证件类型         |
-| id_number      | number   | 32   | 否   | 否   | 证件号码         |
-| address        | varchar  | 128  | 否   | 否   | 用户通信地址     |
-| number         | varchar  | 16   | 否   | 否   | 用户的企业工号   |
-| title          | varchar  | 64   | 否   | 否   | 用户的职位       |
-| device_id      | varchar  | 256  | 否   | 否   | 用户绑定的设备id |
-| department     | varchar  | 128  | 否   | 否   | 用户所属部门    |
-| entry_time     | DATE     | 3    | 否   | 否   | 入职时间         |
-| departure_time | DATE     | 3    | 否   | 是   | 离职时间         |
+| password       | varchar  | 16   | 否   | 否   | 用户密码          |
+| session_id     | varchar  | 64   | 否   | 否   | 用户的会话id      |
+| email          | varchar  | 64   | 否   | 否   | 用户邮箱          |
+| name           | varchar  | 16   | 否   | 否   | 用户姓名          |
+| gender         | number   | 2    | 否   | 否   | 用户性别          |
+| nationality    | varchar  | 64   | 否   | 否   | 用户国籍          |
+| id_type        | number   | 16   | 否   | 否   | 证件类型          |
+| id_number      | number   | 32   | 否   | 否   | 证件号码          |
+| id_address     | varchar  | 128  | 否   | 否   | 用户证件地址       |
+| contact_address| varchar  | 128  | 否   | 否   | 用户通信地址       |
+| company_id     | varchar  | 16   | 否   | 否   | 用户的企业id       |
+| device_id      | varchar  | 64   | 否   | 否   | 用户绑定的设备id   |
 
 
 ### company表
