@@ -149,6 +149,8 @@ https://github.com/qiyejie/backend
 
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
 | ----------- | ---- | ---- | ---- | ---- | ---- |
+| notice_id |  |  | 是 |  | 公告id(自增) |
 | title |      |      |      |      | 公告标题 |
 | content | | | | | 公告内容 |
+| send_user | | | | | 发送人 |
 | send_time | DATE |      |      |  | 发送时间                       |
