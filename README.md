@@ -55,13 +55,14 @@ https://github.com/qiyejie/backend
 | qyj_id         | varchar  | 16   | 是   | 否   | 用户ID           |
 | email          | varchar  | 16   | 否   | 否   | 用户邮箱         |
 | password       | varchar  | 16   | 否   | 否   | 用户密码         |
+| session_id | varchar | 16 | 否 | 否 | 用户session_id |
 | name           | varchar  | 16   | 否   | 否   | 用户姓名         |
 | gender         | number   | 2    | 否   | 否   | 用户性别         |
 | nationality    | varchar  | 64   | 否   | 否   | 用户国籍         |
 | id_type        | number   | 16   | 否   | 否   | 证件类型         |
 | id_number      | number   | 32   | 否   | 否   | 证件号码         |
 | address        | varchar  | 128  | 否   | 否   | 用户通信地址     |
-| number         | varchar  | 16   | 否   | 否   | 用户的企业工号   |
+| job_id    | varchar  | 16   | 否   | 否   | 用户的企业工号   |
 | title          | varchar  | 64   | 否   | 否   | 用户的职位       |
 | device_id      | varchar  | 256  | 否   | 否   | 用户绑定的设备id |
 | department     | varchar  | 128  | 否   | 否   | 用户所属部门    |
