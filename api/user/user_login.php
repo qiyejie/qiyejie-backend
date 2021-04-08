@@ -27,6 +27,14 @@ if ($md5_pass == $sql_result['password']){
     $login_result = 1;    
 }
 // 设置Cookies
-setcookie();
+$cookie_create = md5("$user_id"."$user_pass");
+setcookie("qyj_cookie",$cookie_create);
+// 构造插入语句
+$insert_session_sql = "INSERT INTO users (session_id) VALUES ('$cookie_create')";
+// 执行数据库插入
+$insert_session_result = mysqli_query($mysql_connect,$insert_session_sql);
+if (!$insert_session_result){
+    $login_result = 0;
+}
 echo $login_result;
 ?>
