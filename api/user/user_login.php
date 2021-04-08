@@ -6,12 +6,12 @@ $login_result = 0;
 // 接收传入的用户数据信息
 $user_info = json_decode(file_get_contents("php://input"),true);
 // 处理传入的信息
-$user_name = $user_info['username'];
+$user_id = $user_info['qyj_id'];
 $user_pass = $user_info['password'];
 // 对密码进行md5加密，方便进入数据库对比
 $md5_pass = md5($user_pass);
 // 构造查询语句
-$check_login_sql = "SELECT password FROM users where name=$user_name";
+$check_login_sql = "SELECT password FROM users where qyj_id=$user_id";
 // 连接数据库
 $mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 // 测试数据库连接状态
@@ -26,5 +26,7 @@ $sql_result = mysqli_fetch_assoc($check_login_sql_result);
 if ($md5_pass == $sql_result['password']){
     $login_result = 1;    
 }
+// 设置Cookies
+setcookie();
 echo $login_result;
 ?>
