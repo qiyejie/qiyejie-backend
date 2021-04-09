@@ -1,34 +1,25 @@
 <?php
-include('../config.php'); //配置数据库信息
-$registerResult = "None"; //初始化返回状态
-$jsonContent = json_decode(file_get_contents("php://input"), true);
-$nickname = $jsonContent['username'];
-$password = md5($jsonContent['password']);
-$qyjBackendSql = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-if (!$qyjBackendSql) {
-    die('Connect Error:' . mysqli_error($qyjBackendSql));
+// 载入数据库配置
+include('../config.php');
+// 初始化返回信息
+$register_result = 0;
+// 处理传入的信息
+$user_info = json_decode(file_get_contents("php://input"), true);
+$user_name = $user_info['username'];
+$user_pass = $user_info['password'];
+// 构造数据库插入语句
+$insert_sql = "INSERT INTO users (name,password) VALUES ('$user_name','password')";
+// 连接数据库
+$mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+// 测试数据库连接状态
+if (!$mysql_connect) {
+    die('mysql_connect error:'.mysqli_error($mysql_connect));
 }
-
-$sqlCheckRegist = "select * from user where nickname='$nickname'";
-
-$sqlUserInsert = "INSERT INTO user " .
-    "(nickname,password) " .
-    "VALUES " .
-    "('$nickname','$password')";
-if ($nickname) {
-    $checkRegistResult = mysqli_query($qyjBackendSql,$sqlCheckRegist);
-    if(mysqli_num_rows($checkRegistResult) > 0){
-        die('此用户名已被注册');
-    }else{
-        $sqlReturnValue = mysqli_query($qyjBackendSql, $sqlUserInsert);
-        if (!$sqlReturnValue) {
-            die('Insert Error: ' . mysqli_error($qyjBackendSql));
-        }else{
-	    $registerResult = "注册成功";
-        }
-    }
-
+// 数据库进行插入操作
+$insert_sql_result = mysqli_query($mysql_connect,$insert_sql);
+// 返回插入结果
+if ($insert_sql_result){
+    $register_result = 1;
 }
-mysqli_close($qyjBackendSql);
-echo $registerResult;
+echo $register_result;
 ?>
