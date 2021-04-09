@@ -7,6 +7,7 @@
 **deploy.sh**
 **pm2守护进程**
 **详见: https://segmentfault.com/a/1190000016071010**
+
 ## 基本信息
 
 **部署环境：**
@@ -66,7 +67,7 @@ https://github.com/qiyejie/backend
 | company_id     | int      | 16   | 否   | 否   | 用户的企业id       |
 | device_id      | varchar  | 128   | 否   | 否   | 用户绑定的设备id   |
 
-### company表
+### companies表
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
 | -------------- | -------- | ---- | ---- | ---- | ---------------- |
 | company_id |  |  | 是 |  | 企业ID |

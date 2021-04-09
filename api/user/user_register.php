@@ -1,6 +1,6 @@
 <?php
 // 载入数据库配置
-include('../config.php');
+include('../../config.php');
 // 初始化返回信息
 $register_result = 0;
 // 处理传入的信息
@@ -21,8 +21,12 @@ $insert_sql_result = mysqli_query($mysql_connect,$insert_sql);
 if ($insert_sql_result){
     $register_result = 1;
 }
+// 获取qyj_id
+$qyj_id = mysqli_insert_id($mysql_connect);
+// 处理返回数组
+$return_array = array("result"=>$register_result,"qyj_id"=>$qyj_id);
 // 关闭数据库连接
 mysqli_close($mysql_connect);
 // 返回注册结果
-echo $register_result;
+echo json_encode($return_array);
 ?>
