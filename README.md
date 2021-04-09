@@ -104,13 +104,6 @@ https://github.com/qiyejie/backend
 |signed_id|varchar||否|否|签到人员|
 |signed_time|||||签到时间|
 
-### worklog表
-
-| 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
-| ----------- | ---- | ---- | ---- | ---- | ---- |
-| user_id |      |      |      |      | 日志编写人 |
-| log_name |      |      |      |      | 日志标题 |
-| log_file |      |      |      |      | 文件位置 |
 
 ### leave_work表
 
@@ -139,6 +132,7 @@ https://github.com/qiyejie/backend
 
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
 | ----------- | ---- | ---- | ---- | ---- | ---- |
+| deal_id |  |  | 是 |  | 待办的id |
 | qyj_id |      |      |      |      | 用于标识属于哪一个用户 |
 | title | | | | | 待办的标题 |
 | content |      |      |      |      | 待办的内容 |
