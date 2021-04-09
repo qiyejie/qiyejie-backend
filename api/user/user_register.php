@@ -8,7 +8,7 @@ $user_info = json_decode(file_get_contents("php://input"), true);
 $user_name = $user_info['username'];
 $user_pass = $user_info['password'];
 // 构造数据库插入语句
-$insert_sql = "INSERT INTO users (name,password) VALUES ('$user_name','password')";
+$insert_sql = "INSERT INTO users (name,password) VALUES ('$user_name','$user_pass')";
 // 连接数据库
 $mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 // 测试数据库连接状态
@@ -21,5 +21,8 @@ $insert_sql_result = mysqli_query($mysql_connect,$insert_sql);
 if ($insert_sql_result){
     $register_result = 1;
 }
+// 关闭数据库连接
+mysqli_close($mysql_connect);
+// 返回注册结果
 echo $register_result;
 ?>

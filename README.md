@@ -69,10 +69,12 @@ https://github.com/qiyejie/backend
 ### company表
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
 | -------------- | -------- | ---- | ---- | ---- | ---------------- |
+| company_id |  |  | 是 |  | 企业ID |
 | name           | varchar  | 256  | 否   | 否   | 企业名称       |
 | wifi           | varchar  | 256  | 否   | 否   | 企业WiFi   |
 | position       | varchar  | 128  | 否   | 否   | 企业位置   |
 | ip             | varchar  | 128  | 否   | 否   | 企业ip地址 |
+| structure |  |  |  |  | 公司结构 |
 
 ### chat_message表
 
