@@ -15,7 +15,7 @@ Linux + Nginx + MySql + PHP
 
 **版本信息**
 
-PHP：7.3
+PHP：7.3a
 
 **图床：**
 
@@ -145,3 +145,21 @@ https://github.com/qiyejie/backend
 | content | | | | | 公告内容 |
 | send_user | | | | | 发送人 |
 | send_time | DATE |      |      |  | 发送时间                       |
+
+### schedule表
+| 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
+| ----------- | ---- | ---- | ---- | ---- | ---- |
+| schedule_id |  |  | 是 |  | 日程id(自增) |
+| title | | |  | | 日程标题 |
+| content | | |  | | 日程详情 |
+| start_time | | |  | | 日程开始时间 |
+| end_time | | |  | | 日程结束时间 |
+| member | | |  | | 参与人员 |
+| level | | |  | | 重要等级 |
+
+### memo表
+| 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
+| ----------- | ---- | ---- | ---- | ---- | ---- |
+| memo_id |  |  | 是 |  | 便签id(自增) |
+| content | | |  | | 便签内容 |
+| time | | |  | | 最后一次编辑时间 |
