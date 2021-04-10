@@ -71,12 +71,20 @@ https://github.com/qiyejie/backend
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
 | -------------- | -------- | ---- | ---- | ---- | ---------------- |
 | company_id |  |  | 是 |  | 企业ID |
+| creater_id | | |  | | 创建者的qyj_id |
+| manager_group | | |  | | 管理员组 |
 | name           | varchar  | 256  | 否   | 否   | 企业名称       |
 | wifi           | varchar  | 256  | 否   | 否   | 企业WiFi   |
 | position       | varchar  | 128  | 否   | 否   | 企业位置   |
 | ip             | varchar  | 128  | 否   | 否   | 企业ip地址 |
-| structure |  |  |  |  | 公司结构 |
-
+### departments表
+| 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
+| -------------- | -------- | ---- | ---- | ---- | ---------------- |
+| department_id |  |  | 是 |  | 部门ID |
+| company_id | | |  | | 所属企业id |
+| department_name | | | | | 部门名称 |
+| manager | | |  | | 部门领导 |
+| members | | |  | | 部门成员 |
 ### chat_message表
 
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
