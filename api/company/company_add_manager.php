@@ -21,7 +21,7 @@ if (!$mysql_connect) {
 $select_info_sql_result = mysqli_query($mysql_connect,$select_info_sql);
 $select_info = mysqli_fetch_assoc($select_info_sql_result);
 $manager_group = $select_info["manager_group"];
-array_push($manager_group,$qyj_id);
+array_push(eval($manager_group),$qyj_id);
 $update_info_sql_result = mysqli_query($mysql_connect,$update_info_sql);
 if ($update_info_sql_result){
     $add_result = 1;
