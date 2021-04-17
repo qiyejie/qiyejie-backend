@@ -1,6 +1,6 @@
 <?php
 // 添加数据库配置文件
-include('../config.php');
+include('../../../config.php');
 // 定义返回结果 0为失败，1为成功,2为已签到
 $api_result = 0;
 // 接收传进来的参数

@@ -1,6 +1,6 @@
 <?php
 // 导入配置文件
-include("../../config.php");
+include("../../../config.php");
 // 接收传入的参数
 $user_content = json_decode(file_get_contents("php://input"),true);
 // 处理参数
