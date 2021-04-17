@@ -1,6 +1,6 @@
 <?php
 // 加载配置文件
-include("../config.php");
+include("../../../config.php");
 //初始化返回信息
 $complete_result = 0;
 //接收传递参数

@@ -1,6 +1,6 @@
 <?php
 //加载数据配置文件
-include("../config");
+include("../../../config");
 //接收参数
 $approve_contents = json_decode(file_get_contents("php://input"), true);
 //处理参数信息
