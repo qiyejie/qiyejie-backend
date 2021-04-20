@@ -17,7 +17,7 @@ if ($conn->connect_error) {
   die("连接失败: " . $conn->connect_error);
 } 
 // 数据库进行插入操作
-$insert_sql_result = mysqli_query($mysql_connect,$insert_sql);
+$insert_sql_result = mysqli_query($conn,$insert_sql);
 // 返回插入结果
 if ($insert_sql_result){
   $register_result = 0;
