@@ -8,7 +8,7 @@ $user_info = json_decode(file_get_contents("php://input"), true);
 $user_nickname = $user_info['nickname'];
 $user_pass = $user_info['password'];
 $qyj_id = time()*date("s");
-$sign_in_time = time();
+$sign_in_time = date("Y-m-d H:i:s");
 // 构造数据库插入语句
 $insert_sql = "INSERT INTO users (qyj_id,nickname,password,sign_in_time) VALUES ('$qyj_id','$user_nickname','$user_pass','$sign_in_time')";
 // 创建连接
