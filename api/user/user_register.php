@@ -9,9 +9,9 @@ $user_nickname = $user_info['nickname'];
 $user_pass = $user_info['password'];
 $qyj_id = mt_rand(1,1000)*date("i")*date("s");
 // 构造数据库插入语句
-$insert_sql = "INSERT INTO users (qyj_id,nickname,password) VALUES ('".$qyj_id."','".$user_nickname."','".$user_pass."')";
+$insert_sql = "INSERT INTO users (qyj_id,nickname,password) VALUES ($qyj_id,$user_nickname,$user_pass)";
 // 创建连接
-$conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
+$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 // 检测连接
 if ($conn->connect_error) {
   die("连接失败: " . $conn->connect_error);
