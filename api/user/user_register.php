@@ -10,7 +10,7 @@ $user_pass = $user_info['password'];
 $qyj_id = time()*date("s");
 // $sign_in_time = time();
 // 构造数据库插入语句
-$insert_sql = "INSERT INTO users (qyj_id,nickname,password,sign_in_time) VALUES ('$qyj_id','$user_nickname','$user_pass')";
+$insert_sql = "INSERT INTO users (qyj_id,nickname,password) VALUES ('$qyj_id','$user_nickname','$user_pass')";
 // 创建连接
 $mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 // 检测连接
