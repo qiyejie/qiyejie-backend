@@ -21,7 +21,6 @@ $insert_sql_result = mysqli_query($mysql_connect,$insert_sql);
 // 返回插入结果
 if ($insert_sql_result) {
   $code = 0;
-  echo $insert_sql_result;
 } else {
   die("系统异常:".mysqli_error($mysql_connect));
 }
@@ -30,5 +29,5 @@ $return_array = array("code"=>$code,"qyj_id"=>$qyj_id,"message"=>"注册成功")
 // 关闭数据库连接
 mysqli_close($mysql_connect);
 // 返回注册结果
-echo json_encode($return_array);
+echo json_encode($return_array,$insert_sql);
 ?>
