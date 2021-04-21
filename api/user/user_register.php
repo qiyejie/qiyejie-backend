@@ -8,7 +8,7 @@ if (mysqli_connect_errno($mysql_connect)) {
 // 初始化返回信息
 $code = -1;
 // 处理传入的信息
-$user_info = json_decode(file_get_contents("php://input"), true);
+$user_info = file_get_contents("php://input");
 $user_email = $user_info['email'];
 $select_sql = "SELECT email FROM users WHERE email=$user_email";
 $select_sql_result = mysqli_query($mysql_connect,$select_sql);
