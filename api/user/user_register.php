@@ -24,7 +24,7 @@ $insert_sql_result = mysqli_query($mysql_connect,$insert_sql);
 if ($insert_sql_result) {
   $code = 0;
 } else {
-  die("系统异常:".mysqli_error($insert_sql_result));
+  die("系统异常:".mysqli_error($mysql_connect));
 }
 // 处理返回数组
 $return_array = array("code"=>$code,"qyj_id"=>$qyj_id,"message"=>"注册成功");
