@@ -1,21 +1,32 @@
 <?php
 // 载入数据库配置
 include('../../config.php');
+// 检测连接
+if (mysqli_connect_errno($mysql_connect)) {
+  die("连接MySQL失败: " . mysqli_connect_errno());
+} 
 // 初始化返回信息
 $code = -1;
 // 处理传入的信息
 $user_info = json_decode(file_get_contents("php://input"), true);
 $user_email = $user_info['email'];
+$select_sql = "SELECT email FROM users WHERE email=$user_email";
+$select_sql_result = mysqli_query($mysql_connect,$select_sql);
+
+if ($select_sql_result) {
+  $code = 0;
+} else {
+  die("系统异常:".mysqli_error($mysql_connect));
+}
+
 $user_password = md5($user_info['password']);
-$qyj_id = time()*2;
+$qyj_id = time()*mt_rand(1,10);
 $sign_in_time = time();
+
+
 // 构造数据库插入语句
 $insert_sql = "INSERT INTO users (qyj_id,email,password,sign_in_time) VALUES ('$qyj_id','$user_email','$user_password','$sign_in_time')";
-$mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-// 检测连接
-if (mysqli_connect_errno($mysql_connect)) {
-  die("连接MySQL失败: " . mysqli_connect_errno());
-} 
+
 // 数据库进行插入操作
 $insert_sql_result = mysqli_query($mysql_connect,$insert_sql);
 // 返回插入结果
