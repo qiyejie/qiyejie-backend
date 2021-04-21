@@ -8,9 +8,9 @@ $user_info = json_decode(file_get_contents("php://input"), true);
 $user_nickname = $user_info['nickname'];
 $user_password = $user_info['password'];
 $qyj_id = time();
-// $sign_in_time = time();
+$sign_in_time = time();
 // 构造数据库插入语句
-$insert_sql = "INSERT INTO users (qyj_id,nickname,password) VALUES ('$qyj_id','$user_nickname','$user_password')";
+$insert_sql = "INSERT INTO users (qyj_id,nickname,password,sign_in_time) VALUES ('$qyj_id','$user_nickname','$user_password','$sign_in_time')";
 $mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 // 检测连接
 if (mysqli_connect_errno($mysql_connect)) {
