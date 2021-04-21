@@ -13,9 +13,8 @@ $select_sql = "SELECT email FROM users WHERE email='$user_email'";
 $select_sql_result = mysqli_query($mysql_connect,$select_sql);
 
 if (mysqli_fetch_assoc($select_sql_result)) {
-  echo "邮箱已注册！";
-} else {
-  die("系统异常:".mysqli_error($mysql_connect));
+  $return_array = array("code"=>$code,"error"=>"邮箱已存在！");
+  mysqli_close($mysql_connect);
 }
 
 $user_password = $_POST['password'];
