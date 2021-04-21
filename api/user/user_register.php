@@ -14,7 +14,6 @@ $select_sql_result = mysqli_query($mysql_connect,$select_sql);
 
 if (mysqli_fetch_all($select_sql_result)) {
   mysqli_free_result($select_sql_result);
-  die(array("code"=>$code,"error"=>"邮箱已存在！"));
 }
 
 $user_password = $_POST['password'];
