@@ -13,11 +13,11 @@ $user_email = $user_info['email'];
 $select_sql = "SELECT email FROM users WHERE email=$user_email";
 $select_sql_result = mysqli_query($mysql_connect,$select_sql);
 
-if ($select_sql_result) {
-  mysqli_fetch_array($select_sql_result);
-} else {
-  die("系统异常:".mysqli_error($mysql_connect));
-}
+// if ($select_sql_result) {
+//   mysqli_fetch_array($select_sql_result);
+// } else {
+//   die("系统异常:".mysqli_error($mysql_connect));
+// }
 
 $user_password = md5($user_info['password']);
 $qyj_id = time()*mt_rand(1,10);
