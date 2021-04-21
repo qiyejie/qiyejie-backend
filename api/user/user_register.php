@@ -6,11 +6,11 @@ $code = -1;
 // 处理传入的信息
 $user_info = json_decode(file_get_contents("php://input"), true);
 $user_nickname = $user_info['nickname'];
-$user_pass = $user_info['password'];
+$user_password = $user_info['password'];
 $qyj_id = time()*date("s");
 // $sign_in_time = time();
 // 构造数据库插入语句
-$insert_sql = "INSERT INTO users (qyj_id,nickname,password) VALUES ('$qyj_id','$user_nickname','$user_pass')";
+$insert_sql = "INSERT INTO users (qyj_id,nickname,password) VALUES ($qyj_id,$user_nickname,$user_password)";
 // 创建连接
 $mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 // 检测连接
