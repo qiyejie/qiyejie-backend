@@ -14,7 +14,7 @@ $select_sql = "SELECT email FROM users WHERE email=$user_email";
 $select_sql_result = mysqli_query($mysql_connect,$select_sql);
 
 if ($select_sql_result) {
-  fetch_all($select_sql_result);
+  echo $select_sql_result;
 } else {
   die("系统异常:".mysqli_error($mysql_connect));
 }
