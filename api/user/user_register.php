@@ -10,8 +10,8 @@ $user_password = $user_info['password'];
 $qyj_id = time()*date("s");
 // $sign_in_time = time();
 // 构造数据库插入语句
-// $insert_sql = "INSERT INTO users (qyj_id,nickname,password) VALUES ('$qyj_id','$user_nickname','$user_password')";
-$insert_sql = "INSERT INTO users (qyj_id,nickname,password) VALUES ('123','jason','112233')";
+$insert_sql = "INSERT INTO users (qyj_id,nickname,password) VALUES ('$qyj_id','$user_nickname','$user_password')";
+// $insert_sql = "INSERT INTO users (qyj_id,nickname,password) VALUES ('123','jason','112233')";
 // 创建连接
 $mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 // 检测连接
@@ -24,7 +24,7 @@ $insert_sql_result = mysqli_query($mysql_connect,$insert_sql);
 if ($insert_sql_result) {
   $code = 0;
 } else {
-  die('系统异常~');
+  die("系统异常:".mysqli_error($insert_sql_result));
 }
 // 处理返回数组
 $return_array = array("code"=>$code,"qyj_id"=>$qyj_id,"message"=>"注册成功");
