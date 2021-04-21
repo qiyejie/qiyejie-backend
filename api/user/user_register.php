@@ -12,8 +12,8 @@ $user_email = $_POST['email'];
 $select_sql = "SELECT email FROM users WHERE email='$user_email'";
 $select_sql_result = mysqli_query($mysql_connect,$select_sql);
 
-if ($select_sql_result) {
-  mysqli_fetch_array($select_sql_result);
+if (mysqli_fetch_assoc($select_sql_result)) {
+  echo "邮箱已注册！";
 } else {
   die("系统异常:".mysqli_error($mysql_connect));
 }
