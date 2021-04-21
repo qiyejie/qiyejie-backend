@@ -9,7 +9,7 @@ if (mysqli_connect_errno($mysql_connect)) {
 $code = -1;
 // 处理传入的信息
 $user_email = $_POST['email'];
-$select_sql = "SELECT email FROM users WHERE email='$user_email'";
+$select_sql = "SELECT email FROM users WHERE email=$user_email";
 $select_sql_result = mysqli_query($mysql_connect,$select_sql);
 
 if (mysqli_fetch_all($select_sql_result)) {
