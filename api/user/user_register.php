@@ -10,11 +10,11 @@ $code = -1;
 // 处理传入的信息
 $user_info = json_decode(file_get_contents("php://input"), true);
 $user_email = $user_info['email'];
-$select_sql = "SELECT email FROM users WHERE email='$user_email'";
+$select_sql = "SELECT email FROM users WHERE email=$user_email";
 $select_sql_result = mysqli_query($mysql_connect,$select_sql);
 
 if ($select_sql_result) {
-  echo $select_sql_result;
+  mysqli_fetch_array($select_sql_result);
 } else {
   die("系统异常:".mysqli_error($mysql_connect));
 }
