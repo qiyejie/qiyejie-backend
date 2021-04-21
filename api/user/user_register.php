@@ -12,9 +12,9 @@ $user_email = $_POST['email'];
 $select_sql = "SELECT email FROM users WHERE email='$user_email'";
 $select_sql_result = mysqli_query($mysql_connect,$select_sql);
 
-if (mysqli_fetch_assoc($select_sql_result)) {
-  $return_array = array("code"=>$code,"error"=>"邮箱已存在！");
-  mysqli_close($mysql_connect);
+if (mysqli_fetch_all($select_sql_result)) {
+  mysqli_free_result($select_sql_result);
+  die(array("code"=>$code,"error"=>"邮箱已存在！"));
 }
 
 $user_password = $_POST['password'];
