@@ -6,7 +6,7 @@ $code = -1;
 // 处理传入的信息
 $user_info = json_decode(file_get_contents("php://input"), true);
 $user_email = $user_info['email'];
-$user_password = $user_info['password'];
+$user_password = md5($user_info['password']);
 $qyj_id = time()*2;
 $sign_in_time = time();
 // 构造数据库插入语句
@@ -29,5 +29,5 @@ $return_array = array("code"=>$code,"qyj_id"=>$qyj_id,"message"=>"注册成功")
 // 关闭数据库连接
 mysqli_close($mysql_connect);
 // 返回注册结果
-echo json_encode($return_array,$insert_sql);
+echo json_encode($return_array);
 ?>
