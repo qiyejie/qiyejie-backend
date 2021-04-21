@@ -12,7 +12,7 @@ $user_email = $_POST['email'];
 $select_sql = "SELECT email FROM users WHERE email=$user_email";
 $select_sql_result = mysqli_query($mysql_connect,$select_sql);
 
-if (mysqli_fetch_all($select_sql_result)) {
+if (mysqli_fetch_array($select_sql_result)) {
   mysqli_free_result($select_sql_result);
 }
 
