@@ -21,7 +21,7 @@ $insert_sql_result = mysqli_query($mysql_connect,$insert_sql);
 // 返回插入结果
 if ($insert_sql_result) {
   $code = 0;
-  echo $insert_sql_result
+  echo $insert_sql_result;
 } else {
   die("系统异常:".mysqli_error($mysql_connect));
 }
