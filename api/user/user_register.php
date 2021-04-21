@@ -8,8 +8,7 @@ if (mysqli_connect_errno($mysql_connect)) {
 // 初始化返回信息
 $code = -1;
 // 处理传入的信息
-$user_info = file_get_contents("php://input");
-$user_email = $user_info['email'];
+$user_email = $_POST['email'];
 // $select_sql = "SELECT email FROM users WHERE email=$user_email";
 // $select_sql_result = mysqli_query($mysql_connect,$select_sql);
 
@@ -19,7 +18,7 @@ $user_email = $user_info['email'];
 //   die("系统异常:".mysqli_error($mysql_connect));
 // }
 
-$user_password = md5($user_info['password']);
+$user_password = $_POST['password'];
 $qyj_id = time()*mt_rand(1,10);
 $sign_in_time = time();
 
