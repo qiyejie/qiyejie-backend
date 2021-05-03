@@ -161,6 +161,7 @@ https://github.com/qiyejie/backend
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
 | ----------- | ---- | ---- | ---- | ---- | ---- |
 | schedule_id |  |  | 是 |  | 日程id(自增) |
+| creater_id |  |  | 是 |  | 创建者id |
 | title | | |  | | 日程标题 |
 | content | | |  | | 日程详情 |
 | start_time | | |  | | 日程开始时间 |

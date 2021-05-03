@@ -15,5 +15,11 @@ $schedule_level = $schedule_info["level"];
 // 构造update语句
 $schedule_update_sql = "UPDATE schedule SET title='$schedule_title',content='$schedule_content',start_time='$schedule_start_time',end_time='$schedule_end_time',member='$schedule_member',level='$schedule_level'";
 // 执行sql语句
-$schedule_update_sql_result = mysqli_query($mysql_connect,);
+$schedule_update_sql_result = mysqli_query($mysql_connect,$schedule_update_sql);
+if ($schedule_update_sql_result){
+    $change_result = 1;
+}
+// 输出结果
+echo $change_result;
+mysqli_close($mysql_connect);
 ?>
