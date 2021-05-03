@@ -8,12 +8,6 @@ $leave_contents = json_decode(file_get_contents("php://input"), true);
 //处理传递参数
 $apply_id = $leave_contents['apply_id'];
 $is_apply = $leave_contents['is_apply'];
-//连接数据库
-$mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-//测试连接状态
-if (!$mysql_connect) {
-    die('mysql_connect error:'.mysqli_error($mysql_connect));
-}
 //构造SQL语句
 $update_sql = "UPDATE leave_work SET is_apply=$is_apply WHERE apply_id=$apply_id";
 //执行查询

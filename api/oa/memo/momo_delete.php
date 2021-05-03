@@ -9,12 +9,6 @@ $memo_info = json_decode(file_get_contents("php://input"),true);
 $memo_id = $memo_info['memo_id'];
 //构造删除语句
 $delete_memo_sql = "DELETE FROM memo WHERE memo_id=$memo_id";
-//连接数据库
-$mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-//测试mysql是否可连接
-if (!$mysql_connect) {
-    die('mysql_connect error:'.mysqli_error($mysql_connect));
-}
 //执行数据库语句
 $delete_memo_sql_result = mysqli_query($mysql_connect,$delete_memo_sql);
 if ($delete_memo_sql_result){

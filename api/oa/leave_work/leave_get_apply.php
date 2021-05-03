@@ -7,12 +7,6 @@ $approve_contents = json_decode(file_get_contents("php://input"), true);
 $qyj_id = $approve_contents['qyj_id'];
 //构造查询语句
 $approve_sql = "SELECT * FROM leave_work where qyj_id=$qyj_id";
-//连接数据集
-$mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-//测试mysql是否可连接
-if (!$mysql_connect) {
-    die('mysql_connect error:'.mysqli_error($mysql_connect));
-}
 //进入数据库查询
 $check_approve = mysqli_query($mysql_connect,$approve_sql);
 //初始化返回列表

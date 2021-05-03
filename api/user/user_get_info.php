@@ -7,12 +7,6 @@ $user_contents = json_decode(file_get_contents("php://input"), true);
 $qyj_id = $user_contents['qyj_id'];
 //构造查询语句
 $user_info_sql = "SELECT * FROM users where qyj_id=$qyj_id";
-//连接数据库
-$mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-//测试mysql是否可连接
-if (!$mysql_connect) {
-    die('mysql_connect error:'.mysqli_error($mysql_connect));
-}
 //查询数据库
 $user_info_sql_result = mysqli_query($mysql_connect, $user_info_sql);
 //处理查询结果

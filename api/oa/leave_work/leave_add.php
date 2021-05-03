@@ -12,12 +12,6 @@ $leave_date = $leave_contents['leave_date'];
 $back_date = $leave_contents['back_date'];
 //初始化请假状态信息
 $is_apply = 0;
-//连接数据库
-$mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-//测试连接状态
-if (!$mysql_connect) {
-    die('mysql_connect error:'.mysqli_error($mysql_connect));
-}
 //构造插入语句
 $sql_leave_insert = "INSERT INTO leave_work (user_id,send_to,leave_date,back_date) VALUES ($user_id,$send_to,$leave_date,$back_date)";
 //数据库插入

@@ -3,12 +3,6 @@
 include('../config.php');
 //构造查询语句
 $select_sql = "SELECT * FROM notice order by notice_id desc";
-//连接数据库
-$mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-//测试mysql是否可连接
-if (!$mysql_connect) {
-    die('mysql_connect error:'.mysqli_error($mysql_connect));
-}
 //进行数据库查询
 $select_sql_result = mysqli_query($mysql_connect,$select_sql);
 //处理查询结果

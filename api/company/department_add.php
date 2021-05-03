@@ -11,12 +11,6 @@ $company_id = $company_info["company_id"];
 $name = $company_info["name"];
 // 构造语句
 $create_department_sql = "INSERT INTO departments (company_id,depaetment_name,manager,member_group) VALUES ('$company_id','$name','None','$member_group'";
-// 连接数据库
-$mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-// 测试连接状态
-if (!$mysql_connect) {
-    die('mysql_connect error:'.mysqli_error($mysql_connect));
-}
 // 执行数据库插入操作
 $create_department_sql_result = mysqli_query($mysql_connect,$create_department_sql);
 // 判断是否创建成功

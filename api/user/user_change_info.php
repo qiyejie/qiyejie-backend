@@ -16,12 +16,6 @@ $id_address = $change_contents['id_address'];
 $contact_address = $change_contents['contact_address'];
 // 构造插入语句
 $change_info_sql = "UPDATE users SET email='$email',gender='$gender',nationality='$nationality',id_type='$id_type',id_number='$id_number',id_address='$id_address',contact_address='$contact_address' WHERE qyj_id=$qyj_id";
-// 连接数据库
-$mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-// 测试数据库连接状态
-if (!$mysql_connect) {
-    die('mysql_connect error:'.mysqli_error($mysql_connect));
-}
 // 进行数据库查询
 $change_info_sql_result = mysqli_query($mysql_connect,$change_info_sql);
 if ($change_info_sql_result){
