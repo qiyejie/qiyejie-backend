@@ -33,8 +33,6 @@ if (mysqli_num_rows($check_sql_result) > 0){
     }else {
         $add_result = 1;
     }
-echo $add_result;
-
 }
 echo $add_result;
 mysqli_close($mysql_connect);
