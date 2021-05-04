@@ -18,7 +18,7 @@ mysqli_fetch_array($select_sql_result);
 // }
 
 $user_password = $_POST['password'];
-$qyj_id = time()*mt_rand(1,10);
+$qyj_id = time()*mt_rand(1,9);
 $sign_in_time = time();
 
 
