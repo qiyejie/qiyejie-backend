@@ -1,5 +1,6 @@
 <?php
 header('Access-Control-Allow-Origin:*');
+header('Access-Control-Allow-Methods:*');
 $db_host = "localhost";
 $db_user = "backend";
 $db_pass = "qiyejie";
