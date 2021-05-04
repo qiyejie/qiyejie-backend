@@ -14,12 +14,6 @@ $md5_pass = md5($user_pass);
 */
 // 构造查询语句
 $check_login_sql = "SELECT password FROM users WHERE qyj_id=$qyj_id";
-// 连接数据库
-$mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-// 测试数据库连接状态
-if (!$mysql_connect) {
-    die('mysql_connect error:'.mysqli_error($mysql_connect));
-}
 // 进行数据库查询
 $check_login_sql_result = mysqli_query($mysql_connect,$check_login_sql);
 // 处理查询数据

@@ -9,12 +9,6 @@ $delete_result = 0;
 $department_id = $department_info["department_id"];
 // 构造查询语句
 $delete_sql = "DELETE FROM departments WHERE department_id=$department_id";
-// 连接数据库
-$mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-// 测试连接状态
-if (!$mysql_connect) {
-    die('mysql_connect error:'.mysqli_error($mysql_connect));
-}
 // 进行数据库查询
 $delete_sql_result = mysqli_query($mysql_connect,$delete_sql);
 if($delete_sql_result){

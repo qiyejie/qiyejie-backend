@@ -13,12 +13,6 @@ $position = $company_info["position"];
 $ip = $company_info["ip"];
 // 构造参数
 $update_info_sql = "UPDATE companies SET name='$name',wifi='$wifi',position='$position',ip='$ip' WHERE company_id=$company_id";
-// 连接数据库
-$mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-// 测试数据库连接状态
-if (!$mysql_connect) {
-    die('mysql_connect error:'.mysqli_error($mysql_connect));
-}
 // 数据库进行插入操作
 $update_info_sql_result = mysqli_query($mysql_connect,$update_info_sql);
 if ($update_info_sql_result){

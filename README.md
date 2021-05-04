@@ -111,6 +111,14 @@ https://github.com/qiyejie/backend
 |signed_id|varchar||否|否|签到人员|
 |signed_time|||||签到时间|
 
+### makeup表
+
+| 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
+| ----------- | ---- | ---- | ---- | ---- | ---- |
+|makeup_id|||||补卡id|
+|qyj_id|||||申请人的id|
+|approvel_id|||||审批人员|
+|status|||||处理结果(0:正在审批，1:通过,2:拒绝)|
 
 ### leave_work表
 
@@ -161,6 +169,7 @@ https://github.com/qiyejie/backend
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
 | ----------- | ---- | ---- | ---- | ---- | ---- |
 | schedule_id |  |  | 是 |  | 日程id(自增) |
+| creater_id |  |  | 是 |  | 创建者id |
 | title | | |  | | 日程标题 |
 | content | | |  | | 日程详情 |
 | start_time | | |  | | 日程开始时间 |

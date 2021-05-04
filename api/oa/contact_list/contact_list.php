@@ -7,12 +7,6 @@ $user_content = json_decode(file_get_contents("php://input"),true);
 $company_id = $user_content['company_id'];
 // 构造查询语句
 $select_department_sql = "SELECT department_name,manager,members FROM departments WHERE company_id=$company_id";
-// 连接数据库
-$mysql_connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-// 测试连接状态
-if (!$mysql_connect) {
-    die('mysql_connect error:'.mysqli_error($mysql_connect));
-}
 // 进入数据库查询
 $select_department_sql_result = mysqli_query($mysql_connect,$select_department_sql);
 // 处理查询结果
