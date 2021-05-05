@@ -2,9 +2,9 @@
 //加载配置文件
 include('../config.php');
 //获取传入的信息
-$user_contents = json_decode(file_get_contents("php://input"),true);
+//$user_contents = json_decode(file_get_contents("php://input"),true);
 //处理参数
-$user_id = $user_contents['qyj_id'];
+$user_id = $_POST['qyj_id'];
 //构造查询语句
 $deal_sql = "SELECT * FROM need_deal where qyj_id=$user_id";
 //进行数据库查询

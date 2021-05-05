@@ -2,9 +2,9 @@
 //加载数据库配置文件"
 include("../../config.php");
 //接收参数
-$user_contents = json_decode(file_get_contents("php://input"), true);
+//$user_contents = json_decode(file_get_contents("php://input"), true);
 //处理参数
-$qyj_id = $user_contents['qyj_id'];
+$qyj_id = $_POST['qyj_id'];
 //构造查询语句
 $user_info_sql = "SELECT * FROM users where qyj_id=$qyj_id";
 //查询数据库

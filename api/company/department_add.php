@@ -5,10 +5,10 @@ include("../../config.php");
 $create_result = 0;
 $member_group = array();
 // 接收传入数据
-$company_info = json_decode(file_get_contents("php://input"),true);
+//$company_info = json_decode(file_get_contents("php://input"),true);
 // 处理参数
-$company_id = $company_info["company_id"];
-$name = $company_info["name"];
+$company_id = $_POST["company_id"];
+$name = $_POST["name"];
 // 构造语句
 $create_department_sql = "INSERT INTO departments (company_id,depaetment_name,manager,member_group) VALUES ('$company_id','$name','None','$member_group'";
 // 执行数据库插入操作

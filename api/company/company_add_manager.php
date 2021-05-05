@@ -4,10 +4,10 @@ include("../../config.php");
 // 初始化返回信息
 $add_result = 0;
 // 接收传入的信息
-$company_info = json_decode(file_get_contents("php://input"),true);
+//$company_info = json_decode(file_get_contents("php://input"),true);
 // 处理参数
-$company_id = $company_info["company_id"];
-$qyj_id = $company_info["qyj_id"];
+$company_id = $_POST["company_id"];
+$qyj_id = $_POST["qyj_id"];
 // 构造查询语句
 $select_info_sql = "SELECT manager_group FROM companies WHERE company_id=$company_id";
 $update_info_sql = "UPDATE companies SET manager_group=$manager_group WHERE company_id=$company_id";

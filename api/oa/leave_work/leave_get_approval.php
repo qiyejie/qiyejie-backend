@@ -2,9 +2,9 @@
 //加载数据配置文件
 include("../../../config");
 //接收参数
-$approve_contents = json_decode(file_get_contents("php://input"), true);
+//$approve_contents = json_decode(file_get_contents("php://input"), true);
 //处理参数信息
-$qyj_id = $approve_contents['qyj_id'];
+$qyj_id = $_POST['qyj_id'];
 //构造查询语句
 $approve_sql = "SELECT * FROM leave_work where send_to = $qyj_id AND is_apply = 0";
 //进入数据库查询

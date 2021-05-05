@@ -4,13 +4,13 @@ include('../../../config.php');
 // 定义返回结果 0为失败，1为成功,2为已签到
 $api_result = 0;
 // 接收传进来的参数
-$json_contents = json_decode(file_get_contents("php://input"), true);
+//$json_contents = json_decode(file_get_contents("php://input"), true);
 // 接收用户名
-$user_id = $json_contents['user_id'];
+$user_id = $_POST['user_id'];
 // 定义SSID
-$wifi_ssid = $json_contents['wifi_ssid'];
+$wifi_ssid = $_POST['wifi_ssid'];
 // 定义企业IP
-$wifi_ip = $json_contents['wifi_ip'];
+$wifi_ip = $_POST['wifi_ip'];
 // 定义查询数据库的SQL语句
 $check_company_info = "SELECT wifi,ip FROM company";
 // 进行数据库查询

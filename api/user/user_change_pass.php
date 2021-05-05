@@ -2,13 +2,13 @@
 // 加载数据库配置文件
 include("../../config.php");
 // 接收参数
-$change_contents = json_decode(file_get_contents("php://input"),true);
+//$change_contents = json_decode(file_get_contents("php://input"),true);
 // 初始化返回信息
 $change_result = 0;
 // 处理参数
-$qyj_id = $change_contents['qyj_id'];
-$old_pass = $change_contents['old_pass'];
-$new_pass = $change_contents['new_pass'];
+$qyj_id = $_POST['qyj_id'];
+$old_pass = $_POST['old_pass'];
+$new_pass = $_POST['new_pass'];
 // 构造插入语句
 $check_pass_sql = "SELECT password FROM users WHERE qyj_id=$qyj_id";
 // 进行数据库查询

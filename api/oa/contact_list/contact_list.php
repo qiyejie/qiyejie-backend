@@ -2,9 +2,9 @@
 // 导入配置文件
 include("../../../config.php");
 // 接收传入的参数
-$user_content = json_decode(file_get_contents("php://input"),true);
+//$user_content = json_decode(file_get_contents("php://input"),true);
 // 处理参数
-$company_id = $user_content['company_id'];
+$company_id = $_POST['company_id'];
 // 构造查询语句
 $select_department_sql = "SELECT department_name,manager,members FROM departments WHERE company_id=$company_id";
 // 进入数据库查询

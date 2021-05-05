@@ -3,11 +3,13 @@
 include("../../config.php");
 // 初始化返回信息(0:失败，1:成功)
 $login_result = 0;
+/*
 // 接收传入的用户数据信息
 $user_info = json_decode(file_get_contents("php://input"),true);
+*/
 // 处理传入的信息
-$qyj_id = $user_info['qyj_id'];
-$user_pass = $user_info['password'];
+$qyj_id = $_POST['qyj_id'];
+$user_pass = $_POST['password'];
 /*
 // 对密码进行md5加密，方便进入数据库对比
 $md5_pass = md5($user_pass);

@@ -1,6 +1,6 @@
 <?php
 //加载配置文件
-include('../config.php');
+include('../../../config.php');
 //构造查询语句
 $select_sql = "SELECT * FROM notice order by notice_id desc";
 //进行数据库查询
