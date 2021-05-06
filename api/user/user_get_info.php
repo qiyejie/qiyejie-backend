@@ -12,7 +12,7 @@ $user_info_sql_result = mysqli_query($mysql_connect, $user_info_sql);
 //处理查询结果
 $info = mysqli_fetch_assoc($user_info_sql_result);
 //初始化返回数组
-$user_info = array("qyj_id"=>$qyj_id,"email"=>$info['email'],"name"=>$info['name'],"email"=>$info['email'],"gender"=>$info['gender'],"nationality"=>$info['nationality'],"id_type"=>$info['id_type'],"id_number"=>$info['id_number'],"id_address"=>$info['id_address'],"device_id"=>$info['device_id'],"company_id"=>$info['company_id'],"contact_address"=>$info['contact_address'],"session_id"=>$info_id['session_id']);
+$user_info = array("qyj_id"=>$qyj_id,"email"=>$info['email'],"nickname"=>$info['nickname'],"name"=>$info['name'],"email"=>$info['email'],"gender"=>$info['gender'],"nationality"=>$info['nationality'],"id_type"=>$info['id_type'],"id_number"=>$info['id_number'],"id_address"=>$info['id_address'],"device_id"=>$info['device_id'],"company_id"=>$info['company_id'],"contact_address"=>$info['contact_address'],"session_id"=>$info_id['session_id']);
 //返回内容
 echo json_encode($user_info);
 mysqli_close($mysql_connect); 

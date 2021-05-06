@@ -21,7 +21,29 @@
 "qyj_id":3333
 }
 ```
+## user_change_pass.php
+
+必要参数
+
+| 参数     | 说明   |
+| -------- | ------ |
+| qyj_id   | 用户id |
+| old_pass | 旧密码 |
+| new_pass | 新密码 |
+
+返回参数
+
+| 参数 | 说明 |
+| ---- | ---- |
+| 0    | 失败 |
+| 1    | 成功 |
+
+
+
+
+
 ## user_login.php
+
 必要参数
 
 | 参数     | 说明       |
@@ -80,16 +102,18 @@
 
 必要参数
 
-| 参数            | 说明       |
-| --------------- | ---------- |
-| qyj_id          | 用户qyj_id |
-| email           | 邮箱       |
-| gender          | 性别       |
-| nationality     | 国籍       |
-| id_type         | 证件类型   |
-| id_number       | 证件号     |
-| id_address      | 证件地址   |
-| contact_address | 通信地址   |
+| 参数              | 说明       |
+| ----------------- | ---------- |
+| qyj_id            | 用户qyj_id |
+| email             | 邮箱       |
+| nickname          | 昵称       |
+| name              | 姓名       |
+| gender(0:男,1:女) | 性别       |
+| nationality       | 国籍       |
+| id_type           | 证件类型   |
+| id_number         | 证件号     |
+| id_address        | 证件地址   |
+| contact_address   | 通信地址   |
 
 返回参数
 
