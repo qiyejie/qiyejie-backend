@@ -53,18 +53,19 @@ https://github.com/qiyejie/backend
 
 | 列名            | 数据类型  | 长度  | 主键 | 空   | 说明             |
 | -------------- | -------- | ---- | ---- | ---- | ----------------|
-| qyj_id         | int      | 16   | 是   | 否   | 用户ID           |
-| password       | varchar  | 16   | 否   | 否   | 用户密码          |
+| qyj_id         | varchar  | 64   | 是   | 否   | 用户ID           |
+| nickname       | varchar  | 64   | 否   | 否   | 用户昵称          |
+| password       | varchar  | 128   | 否   | 否   | 用户密码          |
 | session_id     | varchar  | 128   | 否   | 否   | 用户的会话id      |
 | email          | varchar  | 128   | 否   | 否   | 用户邮箱          |
 | name           | varchar  | 16   | 否   | 否   | 用户姓名          |
 | gender         | int      | 2    | 否   | 否   | 用户性别（0:'女',1:'男'）|
 | nationality    | varchar  | 64   | 否   | 否   | 用户国籍          |
-| id_type        | int      | 8   | 否   | 否   | 证件类型          |
+| id_type        | varchar  | 128  | 否   | 否   | 证件类型          |
 | id_number      | int      | 32   | 否   | 否   | 证件号码          |
 | id_address     | varchar  | 128  | 否   | 否   | 用户证件地址       |
 | contact_address| varchar  | 128  | 否   | 否   | 用户通信地址       |
-| company_id     | int      | 16   | 否   | 否   | 用户的企业id       |
+| company_id     | varchar      | 64   | 否   | 否   | 用户的企业id       |
 | device_id      | varchar  | 128   | 否   | 否   | 用户绑定的设备id   |
 | cookies |  |  |  |  | 用户cookies |
 
