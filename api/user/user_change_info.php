@@ -7,7 +7,9 @@ include("../../config.php");
 $change_result = 0;
 // 处理参数
 $qyj_id = $_POST['qyj_id'];
+$nickname = $_POST['nickname'];
 $email = $_POST['email'];
+$name = $_POST['name'];
 $gender = $_POST['gender'];
 $nationality = $_POST['nationality'];
 $id_type = $_POST['id_type'];
