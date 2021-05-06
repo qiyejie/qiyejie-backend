@@ -4,11 +4,11 @@ include("../../../config.php");
 // 初始化返回参数
 $change_result = 0;
 // 接收参数
-$memo_info = json_decode(file_get_contents("php://input"),true);
+//$memo_info = json_decode(file_get_contents("php://input"),true);
 // 处理参数
-$memo_id = $memo_info["memo_id"];
-$memo_title = $memo_info["title"];
-$memo_content = $memo_info["content"];
+$memo_id = $_POST["memo_id"];
+$memo_title = $_POST["title"];
+$memo_content = $_POST["content"];
 $time = date("Y/m/d H:i:s");
 // 构造sql语句
 $update_memo_sql = "UPDATE memo SET title='$memo_title',content='$memo_content',time='$time' WHERE memo_id=$memo_id";

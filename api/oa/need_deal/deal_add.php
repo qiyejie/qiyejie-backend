@@ -4,14 +4,14 @@ include('../config.php');
 //初始化返回信息,0：失败 1：成功
 $add_result = 0;
 //获取传入的信息
-$user_contents = json_decode(file_get_contents("php://input"),true);
+//$user_contents = json_decode(file_get_contents("php://input"),true);
 //处理参数
-$user_id = $user_contents['qyj_id'];
-$title = $user_contents['title'];
-$content = $user_contents['content'];
-$deadline = $user_contents['deadline'];
-$classify = $user_contents['classify'];
-$address = $user_contents['address'];
+$user_id = $_POST['qyj_id'];
+$title = $_POST['title'];
+$content = $_POST['content'];
+$deadline = $_POST['deadline'];
+$classify = $_POST['classify'];
+$address = $_POST['address'];
 $is_done = 0;
 //构造查询语句
 $deal_sql = "SELECT * FROM need_deal where qyj_id=$user_id AND title=\"$title\"";

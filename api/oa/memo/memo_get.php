@@ -2,9 +2,9 @@
 //加载数据库配置
 include("../../../config.php");
 //接收参数
-$user_content = json_decode(file_get_contents("php://input"),true);
+//$user_content = json_decode(file_get_contents("php://input"),true);
 //处理参数
-$qyj_id = $user_content['qyj_id'];
+$qyj_id = $_POST['qyj_id'];
 // 构造查询语句
 $select_memo_sql = "SELECT * FROM memo WHRER qyj_id=$qyj_id";
 //进入数据库查询

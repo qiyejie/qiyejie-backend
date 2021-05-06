@@ -2,9 +2,9 @@
 // 创建数据库
 include("../../config.php");
 // 接收参数
-$company_info = json_decode(file_get_contents("php://input"),true);
+//$company_info = json_decode(file_get_contents("php://input"),true);
 // 处理参数
-$company_id = $company_info["company_id"];
+$company_id = $_POST["company_id"];
 // 构造sql语句
 $select_info_sql = "SELECT * FROM companies WHERE company_id=$company_id";
 // 数据库进行插入操作

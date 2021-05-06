@@ -2,9 +2,9 @@
 // 载入数据库配置
 include("../../../config.php");
 // 接收参数
-$schedule_info = json_decode(file_get_contents("php://input"),true);
+//$schedule_info = json_decode(file_get_contents("php://input"),true);
 // 处理参数
-$qyj_id = $schedule_info["qyj_id"];
+$qyj_id = $_POST["qyj_id"];
 // 构造查询sql语句
 $schedule_select_sql = "SELECT * FROM schedule WHERE member like '%$qyj_id%'";
 // 进入数据库查询

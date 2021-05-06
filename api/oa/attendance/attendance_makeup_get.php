@@ -2,9 +2,9 @@
 // 载入数据库配置文件
 include("../../../config.php");
 // 获取传入的参数
-$makeup_info = json_decode(file_get_contents("php://input"),true);
+//$makeup_info = json_decode(file_get_contents("php://input"),true);
 // 处理参数
-$qyj_id = $makeup_info['qyj_id'];
+$qyj_id = $_POST['qyj_id'];
 // 构造sql语句
 $makeup_select_sql = "SELECT * FROM makeup WHERE qyj_id = $qyj_id";
 // 进入数据库执行

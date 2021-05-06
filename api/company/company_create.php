@@ -5,10 +5,10 @@ include("../../config.php");
 $create_result = 0;
 $manager_group = array();
 // 接收传入数据
-$company_info = json_decode(file_get_contents("php://input"),true);
+//$company_info = json_decode(file_get_contents("php://input"),true);
 // 处理参数
-$creater_id = $company_info["qyj_id"];
-$name = $company_info["name"];
+$creater_id = $_POST["qyj_id"];
+$name = $_POST["name"];
 // 构造语句
 $create_company_sql = "INSERT INTO companies (creater_id,name,manager_group) VALUES ('$creater_id','$name','$manager_group'";
 // 执行数据库插入操作
