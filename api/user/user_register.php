@@ -15,7 +15,7 @@ mysqli_fetch_array($select_sql_result);
 // }
 
 $qyj_id = time()*mt_rand(1,9);
-$sign_in_time = time();
+$sign_in_time = date("Y-m-d H:i:s");;
 
 
 // 构造数据库插入语句
