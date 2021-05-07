@@ -67,7 +67,6 @@ https://github.com/qiyejie/backend
 | contact_address| varchar  | 128  | 否   | 否   | 用户通信地址       |
 | company_id     | varchar      | 64   | 否   | 否   | 用户的企业id       |
 | device_id      | varchar  | 128   | 否   | 否   | 用户绑定的设备id   |
-| cookies |  |  |  |  | 用户cookies |
 
 ### companies表
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |

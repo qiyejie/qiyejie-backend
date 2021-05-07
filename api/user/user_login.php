@@ -24,9 +24,9 @@ if ($user_pass == $sql_result['password']){
 }
 // 设置Cookies
 $cookie_create = md5("$user_id"."$user_pass");
-setcookie("qyj_cookies",$cookie_create);
+setcookie("session_id",$cookie_create);
 // 构造插入语句
-$insert_session_sql = "UPDATE users SET cookies='$cookie_create' WHERE qyj_id=$qyj_id";
+$insert_session_sql = "UPDATE users SET session_id='$cookie_create' WHERE qyj_id=$qyj_id";
 // 执行数据库插入
 $insert_session_result = mysqli_query($mysql_connect,$insert_session_sql);
 if (!$insert_session_result){
