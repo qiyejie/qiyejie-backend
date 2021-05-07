@@ -1,5 +1,5 @@
 <?php
-function getId($qyj_id)
+function getId()
 {
     // 生成qyj_id
     $check_id_sql = "SELECT qyj_id FROM users WHERE qyj_id=$qyj_id";
