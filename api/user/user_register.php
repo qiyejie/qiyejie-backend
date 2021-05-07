@@ -1,12 +1,13 @@
 <?php
 error_reporting(0);
+include("../../config.php");
 function getId()
 {
     // 生成qyj_id
     $check_id_sql = "SELECT qyj_id FROM users WHERE qyj_id=$qyj_id";
     while (true) {
         $qyj_id = time()*mt_rand(1, 9);
-        $check_id_sql_result = mysqli_query($mysql_connect, $check_id_sql);
+        $check_id_sql_result = mysqli_query($GLOBALS['mysql_connect'], $check_id_sql);
         if (!$check_id_sql_result) {
             return $qyj_id;
             break;
@@ -15,10 +16,9 @@ function getId()
 }
 function OnRegister($user_email)
 {
-    $select_sql = "SELECT email FROM users WHERE email=$user_email";
-    $select_sql_result = mysqli_query($mysql_connect, $select_sql);
+    $select_sql = "SELECT email FROM users WHERE email='$user_email'";
+    $select_sql_result = mysqli_query($GLOBALS['mysql_connect'], $select_sql);
     $row = mysqli_num_rows($select_sql_result);
-    echo $row;
     if($row > 0){
         die(json_encode(array("code"=> 0,"message"=>"邮箱已被注册")));
     }else{
@@ -26,8 +26,7 @@ function OnRegister($user_email)
         return $qyj_id;
     }
 }
-// 载入数据库配置
-include("../../config.php");
+
 // 初始化返回信息
 $code = 0;
 // 处理传入的信息
