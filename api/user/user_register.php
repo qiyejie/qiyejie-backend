@@ -17,7 +17,8 @@ function OnRegister($user_email)
 {
     $select_sql = "SELECT email FROM users WHERE email='$user_email'";
     $select_sql_result = mysqli_query($mysql_connect, $select_sql);
-    if($select_sql_result){
+    $row = mysqli_fetch_assoc($select_sql_result);
+    if($row > 0){
         die(json_encode(array("code"=> 0,"message"=>"邮箱已被注册")));
     }else{
         $qyj_id = getId();
