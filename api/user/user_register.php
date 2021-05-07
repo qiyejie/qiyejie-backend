@@ -1,39 +1,37 @@
 <?php
-function checkIdSame($qyj_id)
+function getId($qyj_id)
 {
-    // 判断生成的qyj_id是否存在数据库中，避免重复
+    // 生成qyj_id
     $check_id_sql = "SELECT qyj_id FROM users WHERE qyj_id=$qyj_id";
-    $check_id_sql_result = mysqli_query($mysql_connect,$check_id_sql);
-    if($check_id_sql_result){
-        return False;
+    while (true) {
+        $qyj_id = time()*mt_rand(1, 9);
+        $check_id_sql_result = mysqli_query($mysql_connect, $check_id_sql);
+        if (!$check_id_sql_result) {
+            return $qyj_id;
+            break;
+        }
+    }
+}
+function OnRegister($user_email)
+{
+    $select_sql = "SELECT email FROM users WHERE email='$user_email'";
+    $select_sql_result = mysqli_query($mysql_connect, $select_sql);
+    if($select_sql_result){
+        die(json_encode(array("code"=> 0,"message"=>"邮箱已被注册")));
     }else{
-        return True;
+        $qyj_id = getId();
+        return $qyj_id;
     }
 }
 // 载入数据库配置
 include("../../config.php");
 // 初始化返回信息
-$code = -1;
+$code = 0;
 // 处理传入的信息
 $user_email = $_POST['email'];
 $user_password = $_POST['password'];
-$select_sql = "SELECT email FROM users WHERE email='$user_email'";
-$select_sql_result = mysqli_query($mysql_connect, $select_sql);
-
-mysqli_fetch_array($select_sql_result);
-// if (mysqli_fetch_array($select_sql_result)) {
-//   mysqli_free_result($select_sql_result);
-// }
-
-while(True){
-    $qyj_id = time()*mt_rand(1, 9);
-    $sign_in_time = date("Y-m-d H:i:s");
-    if(checkIdSame($qyj_id)){
-        break;
-    }
-}
-
-
+$sign_in_time = date("Y-m-d H:i:s");
+$qyj_id = OnRegister();
 
 // 构造数据库插入语句
 $insert_sql = "INSERT INTO users (qyj_id,email,password,sign_in_time) VALUES ('$qyj_id','$user_email','$user_password','$sign_in_time')";
@@ -42,7 +40,7 @@ $insert_sql = "INSERT INTO users (qyj_id,email,password,sign_in_time) VALUES ('$
 $insert_sql_result = mysqli_query($mysql_connect, $insert_sql);
 // 返回插入结果
 if ($insert_sql_result) {
-    $code = 0;
+    $code = 1;
 } else {
     die("系统异常:".mysqli_error($mysql_connect));
 }
