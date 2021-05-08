@@ -1,6 +1,7 @@
 <?php
 // 加载数据库配置文件
 include("../../config.php");
+include("../../check_config.php");
 // 接收参数
 //$change_contents = json_decode(file_get_contents("php://input"),true);
 // 初始化返回信息

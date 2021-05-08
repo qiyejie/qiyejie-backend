@@ -52,3 +52,4 @@ $return_array = array("code"=>$code,"qyj_id"=>$qyj_id,"message"=>"注册成功")
 mysqli_close($mysql_connect);
 // 返回注册结果
 echo json_encode($return_array);
+?>

@@ -1,6 +1,7 @@
 <?php
 // 载入数据库配置
 include("../../config.php");
+include("../../check_config.php");
 // 初始化返回参数(0:失败,1:成功)
 $logout_result = 0;
 /*
