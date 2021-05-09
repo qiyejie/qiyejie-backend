@@ -34,7 +34,6 @@ $user_email = $_POST['email'];
 $user_password = $_POST['password'];
 $sign_in_time = date("Y-m-d H:i:s");
 $qyj_id = OnRegister($user_email);
-
 // 构造数据库插入语句
 $insert_sql = "INSERT INTO users (qyj_id,email,password,sign_in_time) VALUES ('$qyj_id','$user_email','$user_password','$sign_in_time')";
 

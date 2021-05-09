@@ -14,8 +14,8 @@ $update_info_sql = "UPDATE companies SET manager_group=$manager_group WHERE comp
 // 查询当前管理员列表
 $select_info_sql_result = mysqli_query($mysql_connect,$select_info_sql);
 $select_info = mysqli_fetch_assoc($select_info_sql_result);
-$manager_group = $select_info["manager_group"];
-array_push(eval($manager_group),$qyj_id);
+$manager_group = eval($select_info["manager_group"]);
+array_push($manager_group,$qyj_id);
 $update_info_sql_result = mysqli_query($mysql_connect,$update_info_sql);
 if ($update_info_sql_result){
     $add_result = 1;
