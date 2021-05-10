@@ -27,7 +27,7 @@ if ($old_pass == $sql_result['password']){
     }
 }
 // 输出结果
-echo $change_result;
+echo json_encode(array("code"=>$change_result));
 // 关闭数据库连接
 mysqli_close($mysql_connect);
 

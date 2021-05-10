@@ -3,11 +3,11 @@
 include("../../config.php");
 // 初始化范围值
 $create_result = 0;
-$manager_group = $_POST["qyj_id"];
 // 接收传入数据
 //$company_info = json_decode(file_get_contents("php://input"),true);
 // 处理参数
 $creater_id = $_POST["qyj_id"];
+$manager_group = $_POST["qyj_id"];
 $name = $_POST["name"];
 // 构造语句
 $create_company_sql = "INSERT INTO companies (creater_id,name,manager_group) VALUES ('$creater_id','$name','$manager_group')";

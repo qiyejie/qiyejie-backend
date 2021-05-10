@@ -32,5 +32,5 @@ $insert_session_result = mysqli_query($mysql_connect,$insert_session_sql);
 if (!$insert_session_result){
     $login_result = 0;
 }
-echo $login_result;
+echo json_encode(array("code"=>$login_result));
 ?>

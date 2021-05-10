@@ -25,7 +25,7 @@ if ($change_info_sql_result){
     $change_result = 1;
 }
 // 输出结果
-echo $change_result;
+echo json_encode(array("code"=>$change_result));
 // 关闭数据库连接
 mysqli_close($mysql_connect);
 

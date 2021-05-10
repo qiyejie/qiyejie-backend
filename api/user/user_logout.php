@@ -19,5 +19,5 @@ if ($delete_session_sql_result) {
     $logout_result = 1;
 }
 mysqli_close($mysql_connect);
-echo $logout_result;
+echo json_encode(array("code"=>$logout_result));
 ?>

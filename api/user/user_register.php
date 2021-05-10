@@ -45,8 +45,18 @@ if ($insert_sql_result) {
 } else {
     die("系统异常:".mysqli_error($mysql_connect));
 }
+// 设置Cookies
+$cookie_create = md5("$qyj_id"."$password");
+setcookie("session_id",$cookie_create);
+// 构造插入语句
+$insert_session_sql = "UPDATE users SET session_id='$cookie_create' WHERE qyj_id=$qyj_id";
+// 执行数据库插入
+$insert_session_result = mysqli_query($mysql_connect,$insert_session_sql);
+if (!$insert_session_result){
+    die(json_encode(array("code"=>0,"message"=>"创建cookies失败")));
+}
 // 处理返回数组
-$return_array = array("code"=>$code,"qyj_id"=>$qyj_id,"message"=>"注册成功");
+$return_array = array("code"=>$code,"qyj_id"=>$qyj_id);
 // 关闭数据库连接
 mysqli_close($mysql_connect);
 // 返回注册结果
