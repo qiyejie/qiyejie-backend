@@ -18,6 +18,6 @@ $update_info_sql_result = mysqli_query($mysql_connect,$update_info_sql);
 if ($update_info_sql_result){
     $update_result = 1;
 }
-echo $update_result;
+echo json_encode(array("code"=>$update_result));
 mysqli_close($mysql_connect);
 ?>

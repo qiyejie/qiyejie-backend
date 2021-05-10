@@ -20,7 +20,7 @@ $update_info_sql_result = mysqli_query($mysql_connect,$update_info_sql);
 if ($update_info_sql_result){
     $add_result = 1;
 }
-echo $add_result;
+echo json_encode(array("code"=>$add_result));
 mysqli_close($mysql_connect);
 
 ?>
