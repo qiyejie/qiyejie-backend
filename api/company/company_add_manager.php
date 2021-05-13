@@ -16,6 +16,7 @@ $select_info_sql_result = mysqli_query($mysql_connect,$select_info_sql);
 $select_info = mysqli_fetch_assoc($select_info_sql_result);
 $manager_group = explode("-",$select_info["manager_group"]);
 array_push($manager_group,$qyj_id);
+$manager_group = implode("-",$manager_group);
 $update_info_sql_result = mysqli_query($mysql_connect,$update_info_sql);
 if ($update_info_sql_result){
     $add_result = 1;
