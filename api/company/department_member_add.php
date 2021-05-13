@@ -14,8 +14,9 @@ $update_info_sql = "UPDATE departments SET members=$members WHERE department_id=
 // 查询当前管理员列表
 $select_info_sql_result = mysqli_query($mysql_connect,$select_info_sql);
 $select_info = mysqli_fetch_assoc($select_info_sql_result);
-$members = $select_info["members"];
+$members = explode("-",$select_info["members"]);
 array_push($members,$qyj_id);
+$members = implode("-",$members);
 $update_info_sql_result = mysqli_query($mysql_connect,$update_info_sql);
 if ($update_info_sql_result){
     $add_result = 1;

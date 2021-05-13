@@ -14,6 +14,6 @@ $delete_sql_result = mysqli_query($mysql_connect,$delete_sql);
 if($delete_sql_result){
     $delete_result = 1;
 }
-echo $delete_result;
+echo json_encode(array("code"=>$delete_result));
 mysqli_close($mysql_connect);
 ?>

@@ -23,5 +23,4 @@ if ($update_info_sql_result){
 }
 echo json_encode(array("code"=>$add_result));
 mysqli_close($mysql_connect);
-
 ?>

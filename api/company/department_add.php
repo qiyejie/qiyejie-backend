@@ -3,7 +3,7 @@
 include("../../config.php");
 // 初始化范围值
 $create_result = 0;
-$member_group = array();
+$member_group = null;
 // 接收传入数据
 //$company_info = json_decode(file_get_contents("php://input"),true);
 // 处理参数
