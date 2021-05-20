@@ -189,10 +189,20 @@ https://github.com/qiyejie/backend
 | content | | |  | | 日程详情 |
 | start_time | | |  | | 日程开始时间 |
 | end_time | | |  | | 日程结束时间 |
-| member | | |  | | 参与人员 |
 | level | | |  | | 重要等级 |
 
+### schedule_member表
+
+| 列名        | 说明   |
+| ----------- | ------ |
+| mid         | 自增id |
+| schedule_id | 日程id |
+| qyj_id      | 用户id |
+
+
+
 ### memo表
+
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
 | ----------- | ---- | ---- | ---- | ---- | ---- |
 | memo_id |  |  | 是 |  | 便签id(自增) |

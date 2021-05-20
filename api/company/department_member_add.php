@@ -8,20 +8,5 @@ $add_result = 0;
 // 处理参数
 $department_id = $_POST["department_id"];
 $qyj_id = $_POST["qyj_id"];
-// 构造查询语句
-$select_info_sql = "SELECT members FROM departments WHERE department_id=$department_id";
-$update_info_sql = "UPDATE departments SET members=$members WHERE department_id=$department_id";
-// 查询当前管理员列表
-$select_info_sql_result = mysqli_query($mysql_connect,$select_info_sql);
-$select_info = mysqli_fetch_assoc($select_info_sql_result);
-$members = explode("-",$select_info["members"]);
-array_push($members,$qyj_id);
-$members = implode("-",$members);
-$update_info_sql_result = mysqli_query($mysql_connect,$update_info_sql);
-if ($update_info_sql_result){
-    $add_result = 1;
-}
-echo $add_result;
-mysqli_close($mysql_connect);
-
+$auth_select_sql = "SELECT  * FROM ";
 ?>

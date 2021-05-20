@@ -1,8 +1,6 @@
 <?php
 // 载入数据库配置
 include("../../config.php");
-// 接收参数
-//$company_info = json_decode(file_get_contents("php://input"),true);
 // 处理参数
 $company_id = $_POST["company_id"];
 // 构造数据库查询语句
