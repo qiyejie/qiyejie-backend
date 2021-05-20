@@ -72,20 +72,33 @@ https://github.com/qiyejie/backend
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
 | -------------- | -------- | ---- | ---- | ---- | ---------------- |
 | company_id |  |  | 是 |  | 企业ID |
-| creater_id | | |  | | 创建者的qyj_id |
-| manager_group | | |  | | 管理员组 |
+| creater_id | | | 否 | | 创建者的qyj_id |
 | name           | varchar  | 256  | 否   | 否   | 企业名称       |
+| profile |  |  |  |  | 企业简介 |
+| logo |  |  |  |  | 企业logo |
 | wifi           | varchar  | 256  | 否   | 否   | 企业WiFi   |
 | position       | varchar  | 128  | 否   | 否   | 企业位置   |
 | ip             | varchar  | 128  | 否   | 否   | 企业ip地址 |
+
 ### departments表
+
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
 | -------------- | -------- | ---- | ---- | ---- | ---------------- |
 | department_id |  |  | 是 |  | 部门ID |
 | company_id | | |  | | 所属企业id |
 | department_name | | | | | 部门名称 |
-| manager | | |  | | 部门领导 |
-| members | | |  | | 部门成员 |
+### department_ members表
+| 列名          | 数据类型 | 长度 | 主键 | 空   | 说明                   |
+| ------------- | -------- | ---- | ---- | ---- | ---------------------- |
+| m_id          |          |      |      |      | 自增id                 |
+| qyj_id        |          |      |      |      | 用户id                 |
+| department_id |          |      |      |      | 部门id                 |
+| identity      |          |      |      |      | 身份（普通员工，领导） |
+
+
+
+
+
 ### chat_message表
 
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
@@ -108,9 +121,10 @@ https://github.com/qiyejie/backend
 ### attendance表
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
 | ----------- | ---- | ---- | ---- | ---- | ---- |
-|signed_date|DATE|32|否|否|日期|
-|signed_id|varchar||否|否|签到人员|
-|signed_time|||||签到时间|
+| sign_id |  |  | 是 |  | 自增id |
+|sign_date|DATE|32|否|否|日期|
+|qyj_id|varchar||否|否|签到人员|
+|sign_time|||||签到时间|
 
 ### makeup表
 
@@ -128,6 +142,7 @@ https://github.com/qiyejie/backend
 | apply_id |  |  | 是 |  | 申请id |
 | qyj_id |      |      |      |      | 申请人 |
 | send_to |      |      |      |      | 下一步处理人 |
+| content | | | | | 请假详情 |
 | is_apply |      |      |      |      | 是否已经通过 (0:审核中，1:通过,2:拒绝|
 | leave_date |      |      |      |      | 请假离开日期 |
 | back_date |      |      |      |      | 请假结束日期 |
@@ -139,7 +154,7 @@ https://github.com/qiyejie/backend
 | file_id |  |  | 是 |  | 文件id |
 | filename |      |      |      |      | 文件名 |
 | path |      |      |      |      | 存放路径 |
-| for_company |      |      |      |      | 所属公司 |
+| group_id |      |      |      |      | 所属群组 |
 | from_id |      |      |      |      | 上传者 |
 | upload_time |      |      |      |      | 上传时间 |
 ### need_deal表
@@ -162,6 +177,7 @@ https://github.com/qiyejie/backend
 | title |      |      |      |      | 公告标题 |
 | content | | | | | 公告内容 |
 | send_user | | | | | 发送人 |
+| group_id | | | | | 群组id |
 | send_time | DATE |      |      |  | 发送时间                       |
 
 ### schedule表
