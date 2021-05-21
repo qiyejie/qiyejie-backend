@@ -11,18 +11,23 @@ $profile = $_POST["profile"];
 $create_company_sql = "INSERT INTO companies (creater_id,name,profile) VALUES ('$creater_id','$name','$profile')";
 $check_company_name = "SELECT name FROM companies WHERE name='$name'";
 // 执行数据库插入操作
-$check_company_name_result = mysqli_query($mysql_connect,$check_company_name);
+$check_company_name_result = mysqli_query($mysql_connect, $check_company_name);
 $row = mysqli_num_rows($check_company_name_result);
-if($row > 0){
+// 查询是否已经有相同名称的公司
+if ($row > 0) {
     die(json_encode(array("code"=>-1,"message"=>"公司名已被注册")));
 }
-$create_company_sql_result = mysqli_query($mysql_connect,$create_company_sql);
+// 创建公司，执行数据库插入操作
+$create_company_sql_result = mysqli_query($mysql_connect, $create_company_sql);
 // 判断是否创建成功
-if($create_company_sql_result){
+if ($create_company_sql_result) {
     $create_result = 1;
 }
+// 返回创建公司的company_id
 $company_id = mysqli_insert_id($mysql_connect);
+// 返回插入结果
 $return_array = array("result"=>$create_result,"company_id"=>$company_id);
 echo json_encode($return_array);
+// 关闭数据库连接
 mysqli_close($mysql_connect);
 ?>

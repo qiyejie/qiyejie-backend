@@ -3,8 +3,6 @@
 include("../../config.php");
 // 初始化范围值
 $create_result = 0;
-// 接收传入数据
-//$company_info = json_decode(file_get_contents("php://input"),true);
 // 处理参数
 $company_id = $_POST["company_id"];
 $name = $_POST["name"];
@@ -16,8 +14,11 @@ $create_department_sql_result = mysqli_query($mysql_connect,$create_department_s
 if($create_department_sql_result){
     $create_result = 1;
 }
+// 获取department_id
 $department_id = mysqli_insert_id($mysql_connect);
+// 返回插入结果
 $return_array = array("result"=>$create_result,"department_id"=>$department_id);
 echo json_encode($return_array);
+// 关闭数据库连接
 mysqli_close($mysql_connect);
 ?>

@@ -17,6 +17,8 @@ $update_info_sql_result = mysqli_query($mysql_connect,$update_info_sql);
 if ($update_info_sql_result){
     $update_result = 1;
 }
+// 返回改变结果
 echo json_encode(array("code"=>$update_result));
+// 关闭数据库连接
 mysqli_close($mysql_connect);
 ?>
