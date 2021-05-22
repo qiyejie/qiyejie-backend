@@ -6,32 +6,39 @@ use Workerman\Worker;
 
 require_once __DIR__ . '/Workerman/Autoloader.php';
 // 建立WebSocket服务器
-$http_worker = new Worker("websocket://0.0.0.0:2000");
+$http_worker = new Worker("websocket://0.0.0.0:1234");
 // 进程数设定为1
 $http_worker->count = 1;
 // 建立用户连接池
 $connect_array = array();
 // 建立连接回调函数
-function handle_connection($connection, $data)
+function handle_connection($connection)
 {
-    global $connect_array;
-    $qyj_id = $data["qyj_id"];
-    // 标记当前在线成员状态
-    $user_online_sql = "UPDATE users SET online=1 WHERE qyj_id='$qyj_id'";
-    $user_online_sql_result = mysqli_query($mysql_connect, $user_online_sql);
-    if ($user_online_sql_result) {
-        // 设定uid
-        $connection->uid = $qyj_id;
-        $connection->send(json_encode(array("code"=>1,"message"=>"已连接")));
-        array_push($connect_array, $qyj_id);
-    }
+    $connection->send("Server Connected");
 }
 // 建立接收消息回调函数
 function handle_message($connection, $data)
 {
     global $connect_array;
+    $data = json_decode($data);
     // 接收前端传来的参数
-    $qyj_id_send = $data["qyj_id"];
+    $qyj_id = $data["qyj_id"];
+    // 判断是否为连接信息
+    if (isset($qyj_id)) {
+        // 初次连接，将qyj_id加入用户池
+        $connection->uid = $qyj_id;
+        // 标记当前在线成员状态
+        $user_online_sql = "UPDATE users SET online=1 WHERE qyj_id='$qyj_id'";
+        $user_online_sql_result = mysqli_query($mysql_connect, $user_online_sql);
+        if ($user_online_sql_result) {
+            // 设定uid
+            $connection->uid = $qyj_id;
+            $connection->send(json_encode(array("code"=>1,"message"=>"已连接")));
+            array_push($connect_array, $qyj_id);
+            return true;
+        }
+    }
+    $qyj_id_send = $data["send_id"];
     $qyj_id_target = $data["target_id"];
     $content = $data["content"];
     $is_group = $data["is_group"];
@@ -94,10 +101,7 @@ function handle_close($connection)
     }
 }
 
-$http_worker->onMessage = function ($connection, $data) {
-    $connection->send('helloworld'.$data);
-};
-$text_worker->onConnect = 'handle_connection';
-$text_worker->onMessage = 'handle_message';
-$text_worker->onClose = 'handle_close';
+$http_worker->onConnect = 'handle_connection';
+$http_worker->onMessage = 'handle_message';
+$http_worker->onClose = 'handle_close';
 Worker::runALL();
