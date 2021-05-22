@@ -67,6 +67,7 @@ https://github.com/qiyejie/backend
 | contact_address| varchar  | 128  | 否   | 否   | 用户通信地址       |
 | company_id     | varchar      | 64   | 否   | 否   | 用户的企业id       |
 | device_id      | varchar  | 128   | 否   | 否   | 用户绑定的设备id   |
+| online |  |  |  |  | 用户在线状态(0:不在线，1:在线) |
 
 ### companies表
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
@@ -103,22 +104,56 @@ https://github.com/qiyejie/backend
 
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
 | ----------- | ---- | ---- | ---- | ---- | ---- |
+| mid |  |  |  |  | 消息id |
 | from_userid | varchar | 128 | 否 | 否 | 发送的用户 |
 | to_userid   | varchar | 128 | 否 | 否 | 接收的用户 |
 | message     | varchar | 128 | 否 | 否 | 消息内容 |
-| is_read     | varchar | 128 | 否 | 否 | 是否已读 |
+| is_push | varchar | 128 | 否 | 否 | 是否已推送到客户 |
 | send_time   | varchar | 128 | 否 | 否 | 发送时间 |
 
 ### chat_group表
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
 | ----------- | ---- | ---- | ---- | ---- | ---- |
 | group_id | varchar | 128 | 是 | 否 | 群组ID |
+| group_logo |  |  |  |  | logo |
 | group_name | varchar | 128 | 否 | 否 | 群组名称 |
-| member | varchar | 128 | 否 | 否 | 成员列表 |
+
+### chat_group_member
+
+| 列名     | 说明 |
+| -------- | ---- |
+| mid      |      |
+| group_id |      |
+| qyj_id   |      |
+
+### chat_group_message表
+
+| 列名      | 说明       |
+| --------- | ---------- |
+| mid       |            |
+| group_id  | 群组id     |
+| from_user | 发送用户id |
+| content   | 消息内容   |
+| time      | 时间       |
+
+### chat_message_without_read
+
+| 列名     | 说明            |
+| -------- | --------------- |
+| mid      | 消息id          |
+| from_id  | 发送者id        |
+| to_id    | 接受者id        |
+| content  | 消息内容        |
+| is_group | 0:非群组 1:群组 |
+| group_id | 群组id          |
+| time     | 发送时间        |
+
+
 
 
 
 ### attendance表
+
 | 列名           | 数据类型 | 长度 | 主键 | 空   | 说明             |
 | ----------- | ---- | ---- | ---- | ---- | ---- |
 | sign_id |  |  | 是 |  | 自增id |
@@ -146,6 +181,8 @@ https://github.com/qiyejie/backend
 | is_apply |      |      |      |      | 是否已经通过 (0:审核中，1:通过,2:拒绝|
 | leave_date |      |      |      |      | 请假离开日期 |
 | back_date |      |      |      |      | 请假结束日期 |
+
+
 
 ### file表
 

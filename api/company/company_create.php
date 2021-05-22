@@ -2,11 +2,15 @@
 // 加载数据库配置
 include("../../config.php");
 // 初始化范围值
-$create_result = 0;
+$create_result = -1;
 // 处理参数
 $creater_id = $_POST["qyj_id"];
 $name = $_POST["name"];
 $profile = $_POST["profile"];
+// 判空
+if(!$creater_id ){
+
+}
 // 构造语句
 $create_company_sql = "INSERT INTO companies (creater_id,name,profile) VALUES ('$creater_id','$name','$profile')";
 $check_company_name = "SELECT name FROM companies WHERE name='$name'";
@@ -21,7 +25,7 @@ if ($row > 0) {
 $create_company_sql_result = mysqli_query($mysql_connect, $create_company_sql);
 // 判断是否创建成功
 if ($create_company_sql_result) {
-    $create_result = 1;
+    $create_result = 0;
 }
 // 返回创建公司的company_id
 $company_id = mysqli_insert_id($mysql_connect);
